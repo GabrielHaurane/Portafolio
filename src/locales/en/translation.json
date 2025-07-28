@@ -4,7 +4,7 @@
   "title": "Frontend Developer",
   "description": "I currently live in the province of Tucumán, Argentina. My experience in the IT world began when I was 15 years old using HTML. At 18, I joined various courses offered by the university, which significantly increased my interest in programming. Later, I enrolled in a bootcamp with over 600 hours of hands-on practice. After completing it, I earned my fullstack developer certification, which allowed me to join an internship at a financial company called Swaply. There, I worked as a frontend developer on different tasks, such as creating a refund page where users could request a refund or cancel a transaction they made.",
   "description2": "Another task I worked on was editing requests, where users could search for a transaction number and verify the information entered. If there was an error in the data or an incorrect receipt, they could indicate the problem and send the correct file. During this experience, I worked with technologies I hadn't used before, such as TypeScript, Next.js, and Tailwind CSS. I also became part of a multicultural team with people from different parts of the world, learning their work methodologies and adapting to this environment. The internship lasted approximately 6 weeks.",
-  "projects_intro": "Here are my latest projects. </>",
+  "projects_intro": "Here is my latest project  </>",
   "project1_title": "Hotel Code",
   "project1_features_title": "Features",
   "project1_features": [
@@ -26,5 +26,24 @@
   "button_github": "View on GitHub",
   "button_live": "Visit Website",
   "title_projetcs": "My Projects",
-  "project_tech_title": "Technologies"
+  "project_tech_title": "Technologies",
+
+  "menu": {
+    "home": "Home",
+    "projects": "Projects and Experience",
+    "contact": "Contact",
+    "cv": "View CV",
+    "drive":"https://drive.google.com/file/d/1kLs-iKN2MIwdsvRAYfo2SqTLPA78F37A/view?usp=sharing"
+  },
+  "experience": {
+  "title": "Professional Experience",
+  "company": "SwaplyAr",
+  "duration": "Duration: 6 weeks",
+  "role": "Frontend Developer",
+  "technologies": "Technologies",
+  "description": [
+    "I worked as a developer on various tasks, such as creating a refund page that allowed users to request a refund or cancel a completed transaction.",
+    "I also worked on the request editing feature, where users could search for a transaction number and verify the submitted information. If there was incorrect data or a wrong receipt, they could report the issue and upload the correct file."
+  ]
+}
 }

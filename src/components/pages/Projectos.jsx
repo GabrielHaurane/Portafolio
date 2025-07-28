@@ -2,7 +2,9 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import hotelCodeImg from "./../../img/hotelCode.png";
 import recetasHaurane from "./../../img/recetasHaurane.png";
+import swaplyAr from "./../../img/swaplyAr.png";
 import ProjectCardTec from "./cuadroProyectos/ProjectCardTec";
+import ProjectCardPas from "./cuadroProyectos/ProjectCardPas";
 const Projectos = () => {
   const { t } = useTranslation();
   return (
@@ -11,7 +13,7 @@ const Projectos = () => {
         <h1>{t("title_projetcs")}</h1>
         <div className="container py-4">
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            <div className="w-100">
+            <div className="w-100 h-100">
               <ProjectCardTec
                 img={hotelCodeImg}
                 title={t("project1_title")}
@@ -21,6 +23,7 @@ const Projectos = () => {
                 githubLink="https://github.com/GabrielHaurane/Frontend-Proyecto-Final.git"
                 liveLink="https://hotel-code.netlify.app"
               />
+              
               <ProjectCardTec
                 img={recetasHaurane}
                 title={t("project2_title")}
@@ -30,6 +33,16 @@ const Projectos = () => {
                 githubLink="https://github.com/GabrielHaurane/blog-recetas-front.git"
                 liveLink="https://las-recetas-de-haurane.netlify.app"
               />
+              <h2 className="my-4">{t("experience.title")}</h2>
+              <ProjectCardPas
+              img={swaplyAr}
+                featuresTitle={t("experience.company")}
+                duration={t("experience.duration")}
+                role={t("experience.role")}
+                features={t("experience.description", { returnObjects: true })}
+                technologiesTitle={t("experience.technologies")}
+                liveLink="https://www.swaplyar.com/es/como-usar-swaplyar"
+                ></ProjectCardPas>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ function ProjectCard({ img, title, featuresTitle, features, githubLink, liveLink
   return (
     
     <div
-      className="card text-white shadow flex-md-row flex-column h-50"
+      className="card text-white shadow flex-md-row flex-column h-100"
       style={{
         backgroundColor: "#1e082c",
         borderBottom: "5px solid #5f307c",
@@ -37,7 +37,7 @@ function ProjectCard({ img, title, featuresTitle, features, githubLink, liveLink
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline-light btn-sm"
+              className="btn btn-outline-light "
             >
               <i className="bi bi-github me-1"></i>
               {t("button_github")}
@@ -48,7 +48,7 @@ function ProjectCard({ img, title, featuresTitle, features, githubLink, liveLink
               href={liveLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline-info btn-sm"
+              className="btn btn-outline-violet"
             >
                <i className="bi bi-box-arrow-up-right me-1"></i>
               {t("button_live")}

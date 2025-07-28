@@ -2,7 +2,6 @@ import { useState } from "react";
 import Menu from "./components/common/menu";
 import Home from "./components/pages/Home";
 import Projectos from "./components/pages/Projectos";
-import CV from "./components/pages/CV";
 import Contacto from "./components/pages/Contacto";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -19,8 +18,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/proyectos" element={<Projectos />} />
-        {/* <Route exact path="/cv" element={<CV />} /> */}
-        {/* <Route exact path="/contacto" element={<Contacto />} /> */}
+        <Route exact path="/contacto" element={<Contacto />} />
       </Routes>
     </main>
       <Footer></Footer>

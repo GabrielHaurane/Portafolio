@@ -31,3 +31,28 @@
 .socialIcons a:hover {
   color: rgb(63, 19, 91);
 }
+
+.btn.btn-outline-violet {
+  color: #ae69e3;
+  border: 1px solid #ae69e3;
+  background-color: transparent;
+}
+
+.btn.btn-outline-violet:hover {
+  color: #fff;
+  background-color: #ae69e3;
+  border-color: #ae69e3;
+}
+
+.btn.btn-outline-violet:focus {
+  box-shadow: 0 0 0 0.25rem rgba(174, 105, 227, 0.5);
+  color: #fff;
+  background-color: #ae69e3;
+  border-color: #ae69e3;
+}
+
+.btn.btn-outline-violet:disabled {
+  color: #ae69e3;
+  background-color: transparent;
+  opacity: 0.65;
+}

@@ -1,10 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Nav } from "react-bootstrap";
 import { NavLink } from 'react-router-dom';
 import miFoto from "./../assets/fotoDePerfil.jpg";
 import LanguageSwitcher from "../LanguageSwitcher";
 
 const Menu = () => {
+    const { t } = useTranslation();
   return (
     <div
       className="sidebar d-flex flex-column justify-content-between p-3 text-white"
@@ -15,31 +17,31 @@ const Menu = () => {
 
         <Nav className="flex-column">
           <NavLink to="/" className="nav-link text-white" >
-            Inicio
+            {t("menu.home")}
           </NavLink>
           <NavLink to="/proyectos" className="nav-link text-white" >
-            Proyectos
+            {t("menu.projects")}
+          </NavLink>
+          <NavLink to="/contacto" className="nav-link text-white" >
+            {t("menu.contact")}
           </NavLink>
           <a
-            href="https://drive.google.com/file/d/1njvBKiIo-DlJG2Tt9a25EvQ_y815qdZy/view?usp=sharing"
+            href={t("menu.drive")}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-outline-light"
           >
             <i className="bi bi-file-earmark-pdf me-1"></i>
-            Ver CV
+            {t("menu.cv")}
           </a>
         </Nav>
       </div>
 
       <div className="d-flex flex-column align-items-center gap-3">
-        {/* Botón de idioma */}
         <LanguageSwitcher />
-
-        {/* Redes sociales */}
         <div className="socialIcons d-flex gap-3">
           <a
-            href="https://github.com/tuusuario"
+            href="https://github.com/GabrielHaurane"
             target="_blank"
             rel="noopener noreferrer"
             className="fs-4 text-white"
@@ -47,7 +49,7 @@ const Menu = () => {
             <i className="bi bi-github"></i>
           </a>
           <a
-            href="https://linkedin.com/in/tuusuario"
+            href="https://www.linkedin.com/in/gabriel-haurane-b117a627b/"
             target="_blank"
             rel="noopener noreferrer"
             className="fs-4 text-white"

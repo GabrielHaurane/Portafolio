@@ -25,14 +25,7 @@ const Home = () => {
                 githubLink="https://hotel-code.netlify.app"
                 liveLink="https://github.com/GabrielHaurane/Frontend-Proyecto-Final.git"
               />
-              <ProjectCard
-                img={recetasHaurane}
-                title={t("project2_title")}
-                featuresTitle={t("project2_features_title")}
-                features={t("project2_features", { returnObjects: true })}
-                githubLink="https://github.com/GabrielHaurane/blog-recetas-front.git"
-                liveLink="https://las-recetas-de-haurane.netlify.app"
-              />
+              
             </div>
           </div>
         </div>
