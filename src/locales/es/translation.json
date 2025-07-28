@@ -1,6 +1,6 @@
 {
   "greeting": "Hola 👋",
-  "name": "Soy Gabriel Haurane",
+  "name": "Soy Gabriel Alejandro Haurane",
   "title": "Desarrollador Frontend",
   "description": "Actualmente resido en la provincia de Tucumán, Argentina. Mi experiencia en el mundo IT empezó cuando yo tenia 15 años utilizando HTML, después a los 18 años ingresé a diversos cursos que daba la facultad y fueron los que más hicieron crecer mi interés en la programación. Luego ingresé a un bootcamp de más de 600 horas de prácticas, el cual al finalizarlo conseguí mi certificación de desarrollador fullstack y eso me permitió entrar en una pasantía de una empresa financiera llamada Swaply, en la cual trabajé como desarrollador frontend en distintas tareas como por ejemplo la creación de una página de reembolso, encargándome de que el usuario pueda solicitar el reembolso o la cancelación de una transacción realizada.",
   "description2": "Otra tarea en la que trabajé fue en la edición de solicitudes, donde el usuario podía buscar un número de transacción y verificar la información ingresada. Si había un error en los datos o un recibo incorrecto, podía indicar el problema y enviar el archivo correcto. Durante esta experiencia, trabajé con tecnologías que no había utilizado antes, como TypeScript, Next.js y Tailwind CSS. También formé parte de un equipo multicultural con personas de diferentes partes del mundo, aprendiendo sus metodologías de trabajo y adaptándome a este entorno. La pasantía duró aproximadamente 6 semanas.",
@@ -45,5 +45,24 @@
       "Trabajé como desarrollador en diversas tareas, como la creación de una página de reembolso que permitía a los usuarios solicitar un reembolso o cancelar una transacción realizada.",
       "También trabajé en la funcionalidad de edición de solicitudes, donde los usuarios podían buscar un número de transacción y verificar la información ingresada. Si había datos incorrectos o un recibo erróneo, podían reportar el problema y subir el archivo correcto."
     ]
+  },
+  "information": {
+    "title": "Información de contacto",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "description": "Si deseas contactarme, puedes enviarme un mensaje a través del formulario a continuación. Estaré encantado de responderte lo antes posible.",
+    "copyEmail": "Copiar correo electrónico",
+    "copyPhone": "Copiar teléfono",
+    "copEmail": "Email copiado",
+    "copPhone": "Teléfono copiado"
+  }
+  ,
+  "form":{
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "message": "Mensaje",
+    "button": "Enviar",
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
   }
 }
