@@ -11,7 +11,7 @@ function LanguageSwitcher() {
 
   return (
     <button className="btn btn-sm btn-outline-light" onClick={cambiarIdioma}>
-      {i18n.language === 'es' ? 'EN' : 'ES'}
+      {i18n.language === 'es' ? 'ENGLISH' : 'ESPAÑOL'}
     </button>
   );
 }

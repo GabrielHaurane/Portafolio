@@ -1,36 +1,34 @@
 import React from "react";
-import { NavLink, Nav } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
+import { NavLink } from 'react-router-dom';
 import miFoto from "./../assets/fotoDePerfil.jpg";
 import LanguageSwitcher from "../LanguageSwitcher";
 
 const Menu = () => {
   return (
-    <div className="sidebar d-flex flex-column justify-content-between p-3 text-white" style={{ height: "100vh" }}>
+    <div
+      className="sidebar d-flex flex-column justify-content-between p-3 text-white"
+      style={{ height: "100vh" }}
+    >
       <div>
         <img src={miFoto} alt="Tu Foto" className="sidebar-img mb-4" />
 
         <Nav className="flex-column">
-          <NavLink
-            
-            className="nav-link text-white"
-            to="/"
-          >
+          <NavLink to="/" className="nav-link text-white" >
             Inicio
           </NavLink>
-          <NavLink
-            
-            className="nav-link text-white"
-            to="/proyectos"
-          >
+          <NavLink to="/proyectos" className="nav-link text-white" >
             Proyectos
           </NavLink>
-          <NavLink
-            
-            className="nav-link text-white"
-            to="/cv"
+          <a
+            href="https://drive.google.com/file/d/1njvBKiIo-DlJG2Tt9a25EvQ_y815qdZy/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline-light"
           >
-            CV
-          </NavLink>
+            <i className="bi bi-file-earmark-pdf me-1"></i>
+            Ver CV
+          </a>
         </Nav>
       </div>
 
