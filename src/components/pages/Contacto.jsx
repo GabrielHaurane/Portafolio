@@ -15,13 +15,25 @@ const Contacto = () => {
   };
   return (
     <>
-    <div className="d-flex justify-content-center w-75 mb-3">
+      <div className="d-flex justify-content-center w-75 mb-3">
         <h1 className="ms-5">{t("information.title")}</h1>
-    </div>
+      </div>
       <div className="d-flex justify-content-center w-75">
         <div className="ms-5 border p-4 rounded shadow w-50 d-flex flex-column gap-3">
           <div>
-            <span className="me-2 fw-bold fs-5">{t("information.email")}</span>
+            <span className="me-2 fw-bold fs-5">{t("information.email")}:</span>
+            <Button
+              className="btn-outline-violet me-2"
+              size="md"
+              onClick={() =>
+                window.open(
+                  "https://mail.google.com/mail/?view=cm&fs=1&to=gabrielhaurane@gmail.com",
+                  "_blank"
+                )
+              }
+            >
+              {t("information.sendmail")}
+            </Button>
             <Button
               className="btn-outline-violet"
               size="md"
@@ -38,6 +50,15 @@ const Contacto = () => {
 
           <div>
             <span className="me-2 fw-bold fs-5">{t("information.phone")}:</span>
+            <Button
+              className="btn-outline-violet me-2"
+              size="md"
+              onClick={() =>
+                window.open("https://wa.me/543816970612", "_blank")
+              }
+            >
+              {t("information.sendWhatsApp")}
+            </Button>
             <Button
               className="btn-outline-violet"
               size="md"

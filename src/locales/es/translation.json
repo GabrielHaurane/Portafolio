@@ -49,7 +49,9 @@
   "information": {
     "title": "Información de contacto",
     "email": "Correo Electrónico",
+    "sendmail": "Enviar correo Electrónico",
     "phone": "Teléfono",
+    "sendWhatsApp": "Enviar WhatsApp",
     "description": "Si deseas contactarme, puedes enviarme un mensaje a través del formulario a continuación. Estaré encantado de responderte lo antes posible.",
     "copyEmail": "Copiar correo electrónico",
     "copyPhone": "Copiar teléfono",

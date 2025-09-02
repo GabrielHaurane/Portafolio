@@ -49,7 +49,9 @@
 "information": {
   "title": "Contact Information",
   "email": "Email",
+  "sendmail": "Send Email",
   "phone": "Phone",
+  "sendWhatsApp": "Send WhatsApp",
   "description": "If you wish to contact me, you can send me a message through the form below. I will be happy to respond as soon as possible.",
   "copyEmail": "Copy Email",
   "copyPhone": "Copy Phone",
