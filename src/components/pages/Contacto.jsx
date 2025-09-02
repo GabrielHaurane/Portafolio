@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Alert } from "react-bootstrap";
 import Form from "./formulario/Form";
 import { useTranslation } from "react-i18next";
+import FormularioPosible from "./formulario/FormularioPosible";
 const Contacto = () => {
   const [copied, setCopied] = useState("");
   const { t } = useTranslation();
@@ -58,7 +59,7 @@ const Contacto = () => {
         <div className="d-flex justify-content-center">
           <h4 className="ms-5 mt-5 w-75">{t("information.description")}</h4>
         </div>
-        <Form
+        <FormularioPosible
           name={t("form.name")}
           email={t("form.email")}
           message={t("form.message")}
