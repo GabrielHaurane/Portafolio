@@ -1,4 +1,3 @@
-import React from 'react';
 import emailjs from "emailjs-com";
 import { useForm } from 'react-hook-form';
 const Form = ({name, email, message, button, successMessage, errorMessage}) => {
