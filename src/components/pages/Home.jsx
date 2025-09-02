@@ -22,8 +22,8 @@ const Home = () => {
                 title={t("project1_title")}
                 featuresTitle={t("project1_features_title")}
                 features={t("project1_features", { returnObjects: true })}
-                githubLink="https://hotel-code.netlify.app"
-                liveLink="https://github.com/GabrielHaurane/Frontend-Proyecto-Final.git"
+                githubLink="https://github.com/GabrielHaurane/Frontend-Proyecto-Final.git"
+                liveLink="https://hotel-code.netlify.app"
               />
               
             </div>
