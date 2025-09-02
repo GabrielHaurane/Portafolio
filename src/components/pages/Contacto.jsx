@@ -76,7 +76,7 @@ const Contacto = () => {
           )}
         </div>
       </div>
-      <div className="d-flex flex-column align-items-center justify-content-center w-75">
+      <div className="d-flex flex-column align-items-center justify-content-center w-75 mb-3">
         <div className="d-flex justify-content-center">
           <h4 className="ms-5 mt-5 w-75">{t("information.description")}</h4>
         </div>

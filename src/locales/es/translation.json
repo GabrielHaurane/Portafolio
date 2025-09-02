@@ -65,6 +65,6 @@
     "message": "Mensaje",
     "button": "Enviar",
     "success": "¡Mensaje enviado con éxito!",
-    "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
+    "error": "Error al enviar el mensaje. En caso de problemas para enviar el mensaje, contáctame directamente con el correo electrónico o por WhatsApp."
   }
 }

@@ -64,6 +64,6 @@
     "message": "Message",
     "button": "Send",
     "success": "Message sent successfully!",
-    "error": "Error sending message. Please try again."
+    "error": "Error sending message. In case of problems sending the message, please contact me directly via email or WhatsApp."
   }
 }
