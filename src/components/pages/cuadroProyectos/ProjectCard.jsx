@@ -1,19 +1,25 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-function ProjectCard({ img, title, featuresTitle, features, githubLink, liveLink  }) {
-   const { t } = useTranslation();
+function ProjectCard({
+  img,
+  title,
+  featuresTitle,
+  features,
+  githubLink,
+  liveLink,
+}) {
+  const { t } = useTranslation();
   return (
-    
     <div
-      className="card text-white shadow flex-md-row flex-column h-100"
+      className="card text-white shadow flex-lg-row flex-column h-100"
       style={{
         backgroundColor: "#1e082c",
         borderBottom: "5px solid #5f307c",
       }}
     >
       {/* Imagen a la izquierda en pantallas medianas en adelante */}
-      <div className="card-img-left d-flex justify-content-center align-items-center col-md-4 col-12">
+      <div className="card-img-left d-flex justify-content-center align-items-center col-lg-5 col-xl-4 col-12">
         <img
           src={img}
           className="img-fluid w-100 h-100 rounded-start"
@@ -23,7 +29,7 @@ function ProjectCard({ img, title, featuresTitle, features, githubLink, liveLink
       </div>
 
       {/* Contenido a la derecha */}
-      <div className="card-body d-flex flex-column justify-content-center col-md-8">
+      <div className="card-body d-flex flex-column justify-content-center col-xl-8 col-lg-7 col-12">
         <h2 className="card-title fw-bold">{title}</h2>
         <h4>{featuresTitle}:</h4>
         <ul className="card-text fs-5">
@@ -32,7 +38,7 @@ function ProjectCard({ img, title, featuresTitle, features, githubLink, liveLink
           ))}
         </ul>
         <div className="mt-3 d-flex gap-2 d-flex justify-content-center">
-            {githubLink && (
+          {githubLink && (
             <a
               href={githubLink}
               target="_blank"
@@ -43,14 +49,14 @@ function ProjectCard({ img, title, featuresTitle, features, githubLink, liveLink
               {t("button_github")}
             </a>
           )}
-             {liveLink && (
+          {liveLink && (
             <a
               href={liveLink}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-outline-violet"
             >
-               <i className="bi bi-box-arrow-up-right me-1"></i>
+              <i className="bi bi-box-arrow-up-right me-1"></i>
               {t("button_live")}
             </a>
           )}

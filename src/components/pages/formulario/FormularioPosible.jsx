@@ -36,7 +36,7 @@ const FormularioPosible = ({name, email, message, button, successMessage, errorM
   return (
         <form
       onSubmit={handleSubmit(onSubmit)}
-      className="p-4 border rounded shadow w-50 ms-5 mt-5"
+      className="p-4 border rounded shadow col-11 col-xl-8 mt-3 "
       style={{ backgroundColor: "#5a297a" }}
     >
       <div className="mb-3">
