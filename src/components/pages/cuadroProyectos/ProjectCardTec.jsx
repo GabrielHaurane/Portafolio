@@ -20,16 +20,15 @@ const ProjectCardTec = ({
       }}
     >
       {/* Imagen a la izquierda en pantallas medianas en adelante */}
-      <div className="card-img-left d-flex justify-content-center align-items-center col-md-4 col-12 w-100">
+      <div className="rounded-top-1 card-img-left d-flex justify-content-center align-items-center col-md-4 col-12 w-100">
         <img
           src={img}
-          className="img-fluid w-100 h-100"
+          className="img-fluid w-100 h-100 rounded-top-5 border-top border-black"
           alt={title}
           style={{
             objectFit: "cover",
             width: "100%",
             height: "100%",
-            borderRadius: "40px 40px 0px 0px",
           }}
         />
       </div>

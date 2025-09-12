@@ -8,7 +8,7 @@ import ProjectCardPas from "./cuadroProyectos/ProjectCardPas";
 const Projectos = () => {
   const { t } = useTranslation();
   return (
-    <div className=" d-flex align-content-start flex-column w-75 ps-5 pt-3 ">
+    <div className=" d-flex align-content-start flex-column col-12 col-lg-9 col-xl-10 px-2 pt-3 pe-lg-3 pe-xl-4 ">
       <div className=" text-start">
         <h1>{t("title_projetcs")}</h1>
         <div className="container py-4">

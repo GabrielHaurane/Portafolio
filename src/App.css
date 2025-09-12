@@ -17,7 +17,21 @@
   color: white;
   min-height: 100%;
 }
+.menuFondoColor{
+  background-color: rgb(63, 19, 91) !important;
+}
+.hamburger-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1050;
+}
 
+@media (min-width: 992px) {
+  .hamburger-btn {
+    display: none !important;
+  }
+}
 .sidebar-img {
   width: 100%;
   border-radius: 50%;

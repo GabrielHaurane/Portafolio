@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Menu from "./components/common/menu";
+import Menu from "./components/common/Menu";
 import Home from "./components/pages/Home";
 import Projectos from "./components/pages/Projectos";
 import Contacto from "./components/pages/Contacto";
@@ -9,6 +9,7 @@ import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Footer from "./components/common/Footer";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 function App() {
   const [count, setCount] = useState(0);
   return (
