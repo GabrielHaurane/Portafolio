@@ -1,8 +1,7 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import hotelCodeImg from "./../../img/hotelCode.png";
 import recetasHaurane from "./../../img/recetasHaurane.png";
-import swaplyar from "./../../img/swaplyar.png";
+import swaplyar from "../../img/swaplyar.png";
 import ProjectCardTec from "./cuadroProyectos/ProjectCardTec";
 import ProjectCardPas from "./cuadroProyectos/ProjectCardPas";
 const Projectos = () => {

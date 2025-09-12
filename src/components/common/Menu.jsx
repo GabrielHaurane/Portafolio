@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import { Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
@@ -89,29 +88,29 @@ const Menu = () => {
       >
         <div className="offcanvas-body d-flex flex-column justify-content-between">
           <div>
-        <img src={miFoto} alt="Tu Foto" className="sidebar-img mb-4" />
+            <img src={miFoto} alt="Tu Foto" className="sidebar-img mb-4" />
 
-        <Nav className="flex-column">
-          <NavLink to="/" className="nav-link text-white" >
-            {t("menu.home")}
-          </NavLink>
-          <NavLink to="/proyectos" className="nav-link text-white" >
-            {t("menu.projects")}
-          </NavLink>
-          <NavLink to="/contacto" className="nav-link text-white" >
-            {t("menu.contact")}
-          </NavLink>
-          <a
-            href={t("menu.drive")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-outline-light"
-          >
-            <i className="bi bi-file-earmark-pdf me-1"></i>
-            {t("menu.cv")}
-          </a>
-        </Nav>
-      </div>
+            <Nav className="flex-column">
+              <NavLink to="/" className="nav-link text-white">
+                {t("menu.home")}
+              </NavLink>
+              <NavLink to="/proyectos" className="nav-link text-white">
+                {t("menu.projects")}
+              </NavLink>
+              <NavLink to="/contacto" className="nav-link text-white">
+                {t("menu.contact")}
+              </NavLink>
+              <a
+                href={t("menu.drive")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline-light"
+              >
+                <i className="bi bi-file-earmark-pdf me-1"></i>
+                {t("menu.cv")}
+              </a>
+            </Nav>
+          </div>
 
           <div className="d-flex flex-column align-items-center gap-3 mt-4">
             <LanguageSwitcher />

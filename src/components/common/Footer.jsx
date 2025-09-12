@@ -1,5 +1,3 @@
-import React from "react";
-
 const Footer = () => {
   return (
     <div
@@ -10,7 +8,7 @@ const Footer = () => {
         bottom: 0,
         left: 0,
         width: "100%",
-        zIndex: 100
+        zIndex: 100,
       }}
     >
       <p> © {new Date().getFullYear()} Haurane Gabriel Alejandro</p>

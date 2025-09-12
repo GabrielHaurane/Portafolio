@@ -1,9 +1,8 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import ProjectCard from "./cuadroProyectos/ProjectCard";
 import hotelCodeImg from "./../../img/hotelCode.png";
 import recetasHaurane from "./../../img/recetasHaurane.png";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 const Home = () => {
   const { t } = useTranslation();
   return (
@@ -26,7 +25,6 @@ const Home = () => {
                 githubLink="https://github.com/GabrielHaurane/Frontend-Proyecto-Final.git"
                 liveLink="https://hotel-code.netlify.app"
               />
-              
             </div>
           </div>
         </div>
