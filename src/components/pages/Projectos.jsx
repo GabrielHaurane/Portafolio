@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import hotelCodeImg from "./../../img/hotelCode.png";
 import recetasHaurane from "./../../img/recetasHaurane.png";
-import swaplyar from "../../img/swaplyar.png";
+import swaplyAr from "../../img/swaplyAr.png";
 import ProjectCardTec from "./cuadroProyectos/ProjectCardTec";
 import ProjectCardPas from "./cuadroProyectos/ProjectCardPas";
 const Projectos = () => {
@@ -34,7 +34,7 @@ const Projectos = () => {
               />
               <h2 className="my-4">{t("experience.title")}</h2>
               <ProjectCardPas
-              img={swaplyar}
+                img={swaplyAr}
                 featuresTitle={t("experience.company")}
                 duration={t("experience.duration")}
                 role={t("experience.role")}
