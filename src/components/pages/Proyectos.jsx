@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import hotelCodeImg from "./../../img/hotelCode.png";
 import recetasHaurane from "./../../img/recetasHaurane.png";
-import swaplyAr from "../../img/swaplyar.png";
+import swaply from "../../img/swaply.png";
 import ProjectCardTec from "./cuadroProyectos/ProjectCardTec";
 import ProjectCardPas from "./cuadroProyectos/ProjectCardPas";
-const Projectos = () => {
+const Proyectos = () => {
   const { t } = useTranslation();
   return (
     <div className=" d-flex align-content-start flex-column col-12 col-lg-9 col-xl-10 px-2 pt-3 pe-lg-3 pe-xl-4 ">
@@ -22,7 +22,7 @@ const Projectos = () => {
                 githubLink="https://github.com/GabrielHaurane/Frontend-Proyecto-Final.git"
                 liveLink="https://hotel-code.netlify.app"
               />
-              
+
               <ProjectCardTec
                 img={recetasHaurane}
                 title={t("project2_title")}
@@ -34,14 +34,14 @@ const Projectos = () => {
               />
               <h2 className="my-4">{t("experience.title")}</h2>
               <ProjectCardPas
-                img={swaplyAr}
+                img={swaply}
                 featuresTitle={t("experience.company")}
                 duration={t("experience.duration")}
                 role={t("experience.role")}
                 features={t("experience.description", { returnObjects: true })}
                 technologiesTitle={t("experience.technologies")}
                 liveLink="https://www.swaplyar.com/es/como-usar-swaplyar"
-                ></ProjectCardPas>
+              ></ProjectCardPas>
             </div>
           </div>
         </div>
@@ -50,4 +50,4 @@ const Projectos = () => {
   );
 };
 
-export default Projectos;
+export default Proyectos;
