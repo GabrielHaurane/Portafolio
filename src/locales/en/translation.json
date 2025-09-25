@@ -51,11 +51,7 @@
   "sendmail": "Send Email",
   "phone": "Phone",
   "sendWhatsApp": "Send WhatsApp",
-  "description": "If you wish to contact me, you can send me a message through the form below. I will be happy to respond as soon as possible.",
-  "copyEmail": "Copy Email",
-  "copyPhone": "Copy Phone",
-  "copEmail": "Email copied",
-  "copPhone": "Phone copied"
+  "description": "If you wish to contact me, you can send me a message through the form below. I will be happy to respond as soon as possible."
 },
   "form": {
     "name": "Name",
