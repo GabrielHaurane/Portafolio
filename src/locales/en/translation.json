@@ -1,9 +1,8 @@
 {
   "greeting": "Hello 👋",
-  "name": "I'm Gabriel Alejandro Haurane",
-  "title": "Frontend Developer",
-  "description": "I currently live in the province of Tucumán, Argentina. My experience in the IT world began when I was 15 years old using HTML. At 18, I joined various courses offered by the university, which significantly increased my interest in programming. Later, I enrolled in a bootcamp with over 600 hours of hands-on practice. After completing it, I earned my fullstack developer certification, which allowed me to join an internship at a financial company called SwaplyAr. There, I worked as a frontend developer on different tasks, such as creating a refund page where users could request a refund or cancel a transaction they made.",
-  "description2": "Another task I worked on was editing requests, where users could search for a transaction number and verify the information entered. If there was an error in the data or an incorrect receipt, they could indicate the problem and send the correct file. During this experience, I worked with technologies I hadn't used before, such as TypeScript, Next.js, and Tailwind CSS. I also became part of a multicultural team with people from different parts of the world, learning their work methodologies and adapting to this environment. The internship lasted approximately 6 weeks.",
+  "name": "I am Gabriel Alejandro Haurane, Frontend Developer from Tucumán, Argentina.",
+  "description": "I started programming at the age of 15 with HTML and since then I have been improving my skills through courses, an intensive bootcamp, and professional experiences that allowed me to work with technologies like TypeScript, Next.js, and Tailwind CSS, collaborating in multicultural teams and real projects.",
+  
   "projects_intro": "Here is my latest project  </>",
   "project1_title": "Hotel Code",
   "project1_features_title": "Features",

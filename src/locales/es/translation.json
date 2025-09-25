@@ -1,9 +1,7 @@
 {
   "greeting": "Hola 👋",
-  "name": "Soy Gabriel Alejandro Haurane",
-  "title": "Desarrollador Frontend",
-  "description": "Actualmente resido en la provincia de Tucumán, Argentina. Mi experiencia en el mundo IT empezó cuando yo tenia 15 años utilizando HTML, después a los 18 años ingresé a diversos cursos que daba la facultad y fueron los que más hicieron crecer mi interés en la programación. Luego ingresé a un bootcamp de más de 600 horas de prácticas, el cual al finalizarlo conseguí mi certificación de desarrollador fullstack y eso me permitió entrar en una pasantía de una empresa financiera llamada Swaply, en la cual trabajé como desarrollador frontend en distintas tareas como por ejemplo la creación de una página de reembolso, encargándome de que el usuario pueda solicitar el reembolso o la cancelación de una transacción realizada.",
-  "description2": "Otra tarea en la que trabajé fue en la edición de solicitudes, donde el usuario podía buscar un número de transacción y verificar la información ingresada. Si había un error en los datos o un recibo incorrecto, podía indicar el problema y enviar el archivo correcto. Durante esta experiencia, trabajé con tecnologías que no había utilizado antes, como TypeScript, Next.js y Tailwind CSS. También formé parte de un equipo multicultural con personas de diferentes partes del mundo, aprendiendo sus metodologías de trabajo y adaptándome a este entorno. La pasantía duró aproximadamente 6 semanas.",
+  "name": "Soy Gabriel Alejandro Haurane, Desarrollador Frontend de Tucumán, Argentina.",
+  "description": "Comencé en programación a los 15 años con HTML y desde entonces fui perfeccionando mis habilidades a través de cursos, un bootcamp intensivo y experiencias profesionales que me permitieron trabajar con tecnologías como TypeScript, Next.js y Tailwind CSS, colaborando en equipos multiculturales y proyectos reales.",
   "projects_intro": "A continuación mi último proyecto. </>",
   "project1_title": "Hotel Code",
   "project1_features_title": "Características",
