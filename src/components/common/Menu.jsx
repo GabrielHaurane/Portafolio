@@ -102,7 +102,6 @@ const Menu = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline-light mt-3"
-                data-bs-dismiss="offcanvas"
               >
                 <i className="bi bi-file-earmark-pdf me-1"></i>
                 {t("menu.cv")}
