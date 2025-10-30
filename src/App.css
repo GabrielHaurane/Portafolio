@@ -1,7 +1,7 @@
 .sidebar {
-  width: 270px;
+  width: 250px;
   height: 100vh;
-  position: fixed;
+  position: relative;
   top: 0;
   right: 0;
   background-color: #2b0c3eff;
@@ -10,7 +10,6 @@
   justify-content: space-between;
   padding: 1rem;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
 }
 .mainColor{
   background-color: rgb(63, 19, 91);
@@ -69,4 +68,29 @@
   color: #ae69e3;
   background-color: transparent;
   opacity: 0.65;
+}
+.nav-link {
+  position: relative;           /* para que ::after se posicione respecto al texto */
+  text-decoration: none;        /* quitamos subrayado normal */
+  padding-bottom: 4px;          /* pequeño espacio debajo del texto */
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;                    /* justo debajo del texto */
+  height: 2px;                  /* grosor de la línea */
+  width: 0;                      /* empieza escondido */
+  background-color: #fff;       /* color de la línea */
+  transition: width 0.3s ease;  /* animación de deslizamiento */
+}
+
+.nav-link.active::after {
+  width: 100%; /* se extiende solo el ancho del texto */
+}
+@media (min-width: 992px) {
+  .main-content {
+    margin-left: 250px; /* deja espacio para el sidebar */
+  }
 }

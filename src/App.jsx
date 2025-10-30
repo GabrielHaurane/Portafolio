@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Menu from "./components/common/Menu";
 import Home from "./components/pages/Home";
-import Projectos from "./components/pages/Projectos";
+import Proyectos from "./components/pages/Proyectos";
 import Contacto from "./components/pages/Contacto";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -18,7 +18,7 @@ function App() {
     <main className="flex-grow-1 mainColor" style={{height: "100%"}} >
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/proyectos" element={<Projectos />} />
+        <Route exact path="/proyectos" element={<Proyectos />} />
         <Route exact path="/contacto" element={<Contacto />} />
       </Routes>
     </main>
