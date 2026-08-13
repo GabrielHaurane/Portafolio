@@ -1,11 +1,13 @@
 {
   "greeting": "Hello 👋",
-  "name": "I am Gabriel Alejandro Haurane, Frontend Developer from Tucumán, Argentina.",
+  "name": "I am Gabriel Alejandro Haurane, software Developer from Tucumán, Argentina.",
   "description": "I started programming at the age of 15 with HTML and since then I have been improving my skills through courses, an intensive bootcamp, and professional experiences that allowed me to work with technologies like TypeScript, Next.js, and Tailwind CSS, collaborating in multicultural teams and real projects.",
-  
+  "description2": "I currently have over 1 year of experience and knowledge in both web development and desktop applications, with a special interest in creating efficient, scalable solutions focused on a good user experience.",
   "projects_intro": "Here is my latest project  </>",
   "project1_title": "Hotel Code",
   "project1_features_title": "Features",
+  "bool":"State",
+  "status":"inactive",
   "project1_features": [
     "Room Search: Filter rooms based on availability and other criteria.",
     "Bookings: Complete reservations by specifying check-in and check-out dates.",

@@ -4,6 +4,8 @@ function ProjectCard({
   img,
   title,
   featuresTitle,
+  statusItem,
+  bool,
   features,
   githubLink,
   liveLink,
@@ -30,6 +32,7 @@ function ProjectCard({
       {/* Contenido a la derecha */}
       <div className="card-body d-flex flex-column justify-content-center col-xl-8 col-lg-7 col-12">
         <h2 className="card-title fw-bold">{title}</h2>
+        <h4>{bool}: {statusItem}</h4>
         <h4>{featuresTitle}:</h4>
         <ul className="card-text fs-5">
           {features.map((item, index) => (
@@ -48,17 +51,7 @@ function ProjectCard({
               {t("button_github")}
             </a>
           )}
-          {liveLink && (
-            <a
-              href={liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-outline-violet"
-            >
-              <i className="bi bi-box-arrow-up-right me-1"></i>
-              {t("button_live")}
-            </a>
-          )}
+          
         </div>
       </div>
     </div>

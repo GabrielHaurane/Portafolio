@@ -11,6 +11,7 @@ const Home = () => {
         <h1>{t("greeting")}</h1>
         <h2>{t("name")}</h2>
         <p className="fs-5">{t("description")}</p>
+        <p className="fs-5">{t("description2")}</p>
         <h2>{t("projects_intro")}</h2>
         <div className="container py-4">
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -19,6 +20,8 @@ const Home = () => {
                 img={hotelCodeImg}
                 title={t("project1_title")}
                 featuresTitle={t("project1_features_title")}
+                bool={t("bool")}
+                statusItem={t("status")}
                 features={t("project1_features", { returnObjects: true })}
                 githubLink="https://github.com/GabrielHaurane/Frontend-Proyecto-Final.git"
                 liveLink="https://hotel-code.netlify.app"

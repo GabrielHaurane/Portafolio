@@ -16,6 +16,8 @@ const Proyectos = () => {
               <ProjectCardTec
                 img={hotelCodeImg}
                 title={t("project1_title")}
+                bool={t("bool")}
+                statusItem={t("status")}
                 featuresTitle={t("project1_features_title")}
                 features={t("project1_features", { returnObjects: true })}
                 technologiesTitle={t("technologiesTitle")}
@@ -26,6 +28,8 @@ const Proyectos = () => {
               <ProjectCardTec
                 img={recetasHaurane}
                 title={t("project2_title")}
+                bool={t("bool")}
+                statusItem={t("status")}
                 featuresTitle={t("project2_features_title")}
                 features={t("project2_features", { returnObjects: true })}
                 technologiesTitle={t("technologiesTitle")}

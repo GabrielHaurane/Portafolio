@@ -12,12 +12,12 @@
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
 }
 .mainColor{
-  background-color: rgb(63, 19, 91);
+  background-color: rgb(59, 27, 80);
   color: white;
   min-height: 100%;
 }
 .menuFondoColor{
-  background-color: rgb(63, 19, 91) !important;
+  background-color: rgb(80, 25, 114) !important;
 }
 .hamburger-btn {
   position: fixed;
