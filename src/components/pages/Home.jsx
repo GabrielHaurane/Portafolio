@@ -1,8 +1,5 @@
 import { useTranslation } from "react-i18next";
-import ProjectCard from "./cuadroProyectos/ProjectCard";
-import hotelCodeImg from "./../../img/hotelCode.png";
-import recetasHaurane from "./../../img/recetasHaurane.png";
-import "bootstrap/dist/css/bootstrap.min.css";
+import ProjectCardApp from "./cuadroProyectos/ProjectCardApp";
 const Home = () => {
   const { t } = useTranslation();
   return (
@@ -16,15 +13,11 @@ const Home = () => {
         <div className="container py-4">
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             <div className="w-100">
-              <ProjectCard
-                img={hotelCodeImg}
-                title={t("project1_title")}
-                featuresTitle={t("project1_features_title")}
-                bool={t("bool")}
-                statusItem={t("status")}
-                features={t("project1_features", { returnObjects: true })}
-                githubLink="https://github.com/GabrielHaurane/Frontend-Proyecto-Final.git"
-                liveLink="https://hotel-code.netlify.app"
+              <ProjectCardApp
+                title={t("gh_app.title")}
+                featuresTitle={t("gh_app.features_title")}
+                features={t("gh_app.features", { returnObjects: true })}
+                githubLink="https://github.com/GabrielHaurane/GHProgramingApp"
               />
             </div>
           </div>

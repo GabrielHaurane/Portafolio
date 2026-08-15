@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import LoadingImage from "../../common/LoadingImage";
 
 function ProjectCard({
   img,
@@ -15,13 +16,13 @@ function ProjectCard({
     <div
       className="card text-white shadow flex-lg-row flex-column h-100"
       style={{
-        backgroundColor: "#1e082c",
+        backgroundColor: "var(--color-card)",
         borderBottom: "5px solid #5f307c",
       }}
     >
       {/* Imagen a la izquierda en pantallas medianas en adelante */}
       <div className="card-img-left d-flex justify-content-center align-items-center col-lg-5 col-xl-4 col-12">
-        <img
+        <LoadingImage
           src={img}
           className="img-fluid w-100 h-100 rounded-start"
           alt={title}

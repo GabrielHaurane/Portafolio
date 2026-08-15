@@ -3,6 +3,7 @@ import { Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import miFoto from "./../assets/fotoDePerfil.jpg";
 import LanguageSwitcher from "../LanguageSwitcher";
+import LoadingImage from "./LoadingImage";
 
 const Menu = () => {
   const { t } = useTranslation();
@@ -12,7 +13,7 @@ const Menu = () => {
       {/* Sidebar fijo - escritorio */}
       <div className="sidebar d-none d-lg-flex flex-column justify-content-between p-3 text-white position-fixed" style={{ width: "250px", height: "100vh" }}>
         <div>
-          <img src={miFoto} alt="Tu Foto" className="sidebar-img mb-4" />
+          <LoadingImage src={miFoto} alt="Tu Foto" className="sidebar-img mb-4" />
 
           <Nav className="flex-column">
             <NavLink
@@ -32,6 +33,12 @@ const Menu = () => {
               className={({ isActive }) => `nav-link text-white ${isActive ? "active" : ""}`}
             >
               {t("menu.contact")}
+            </NavLink>
+            <NavLink
+              to="/tecnologias"
+              className={({ isActive }) => `nav-link text-white ${isActive ? "active" : ""}`}
+            >
+              {t("menu.technologies")}
             </NavLink>
             <a
               href={t("menu.drive")}
@@ -79,7 +86,7 @@ const Menu = () => {
       >
         <div className="offcanvas-body d-flex flex-column justify-content-between">
           <div>
-            <img src={miFoto} alt="Tu Foto" className="sidebar-img mb-4" />
+            <LoadingImage src={miFoto} alt="Tu Foto" className="sidebar-img mb-4" />
 
             <Nav className="flex-column">
               <NavLink to="/" className="nav-link text-white" >
@@ -95,6 +102,11 @@ const Menu = () => {
               <NavLink to="/contacto" className="nav-link text-white" >
               <div data-bs-dismiss="offcanvas">
                 {t("menu.contact")}
+              </div>
+              </NavLink>
+              <NavLink to="/tecnologias" className="nav-link text-white" >
+              <div data-bs-dismiss="offcanvas">
+                {t("menu.technologies")}
               </div>
               </NavLink>
               <a

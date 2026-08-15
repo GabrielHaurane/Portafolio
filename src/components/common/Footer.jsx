@@ -3,7 +3,7 @@ const Footer = () => {
     <div
       className="py-4 text-center text-white d-flex flex-wrap mt-auto justify-content-center align-items-center"
       style={{
-        backgroundColor: "#2b0c3eff",
+        backgroundColor: "var(--color-surface)",
         bottom: 0,
         left: 0,
         width: "100%",

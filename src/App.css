@@ -1,10 +1,64 @@
+:root {
+  --color-background: #3b1b50;
+  --color-surface: #2b0c3e;
+  --color-surface-soft: #501972;
+  --color-card: #1e082c;
+  --color-form: #5a297a;
+  --color-accent: #ae69e3;
+  --color-accent-ink: #1e082c;
+  --color-success: #146c43;
+  --color-error: #b02a37;
+}
+
+.media-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.media-frame > img {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 180ms ease-in;
+}
+
+.media-frame > iframe {
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 180ms ease-in;
+}
+
+.media-frame > .media-loaded {
+  opacity: 1;
+}
+
+.media-skeleton {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(90deg, #2b0c3e 25%, #501972 50%, #2b0c3e 75%);
+  background-size: 200% 100%;
+  animation: media-skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes media-skeleton-shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-skeleton {
+    animation: none;
+  }
+}
+
 .sidebar {
   width: 250px;
   height: 100vh;
   position: relative;
   top: 0;
   right: 0;
-  background-color: #2b0c3eff;
+  background-color: var(--color-surface);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,12 +66,12 @@
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
 }
 .mainColor{
-  background-color: rgb(59, 27, 80);
+  background-color: var(--color-background);
   color: white;
   min-height: 100%;
 }
 .menuFondoColor{
-  background-color: rgb(80, 25, 114) !important;
+  background-color: var(--color-surface-soft) !important;
 }
 .hamburger-btn {
   position: fixed;
@@ -42,30 +96,30 @@
 }
 
 .socialIcons a:hover {
-  color: rgb(63, 19, 91);
+  color: var(--color-accent-ink);
 }
 
 .btn.btn-outline-violet {
-  color: #ae69e3;
-  border: 1px solid #ae69e3;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
   background-color: transparent;
 }
 
 .btn.btn-outline-violet:hover {
-  color: #fff;
-  background-color: #ae69e3;
-  border-color: #ae69e3;
+  color: var(--color-accent-ink);
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .btn.btn-outline-violet:focus {
   box-shadow: 0 0 0 0.25rem rgba(174, 105, 227, 0.5);
-  color: #fff;
-  background-color: #ae69e3;
-  border-color: #ae69e3;
+  color: var(--color-accent-ink);
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .btn.btn-outline-violet:disabled {
-  color: #ae69e3;
+  color: var(--color-accent);
   background-color: transparent;
   opacity: 0.65;
 }

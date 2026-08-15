@@ -24,6 +24,16 @@
     "Almacenamiento local: Guarda recetas favoritas en el navegador.",
     "Diseño responsive: Adaptado a dispositivos móviles y desktop."
   ],
+  "gh_app": {
+    "title": "GHProgrammingApp",
+    "features_title": "Características",
+    "features": [
+      "Aplicación para aprender a programar comenzando con teoría.",
+      "Quiz con preguntas basadas en la teoría de cada nivel.",
+      "Tutorial para identificar el nivel adecuado de la persona.",
+      "Actualmente cuenta con los niveles 1 y 2 para comenzar."
+    ]
+  },
   "button_github": "Ver en GitHub",
   "button_live": "Ver Página",
   "title_projetcs": "Mis Proyectos",
@@ -33,6 +43,7 @@
     "home": "Inicio",
     "projects": "Proyectos y Experiencia",
     "contact": "Contacto",
+    "technologies": "Tecnologías",
     "cv": "Ver CV",
     "drive": "https://drive.google.com/file/d/1_2VAquom2EFTNW2qwjX0SS60f44UYhRq/view?usp=sharing"
   },
@@ -62,5 +73,9 @@
     "button": "Enviar",
     "success": "¡Mensaje enviado con éxito!",
     "error": "Error al enviar el mensaje. En caso de problemas para enviar el mensaje, contáctame directamente con el correo electrónico o por WhatsApp."
+  },
+  "technologies_page": {
+    "title": "Tecnologías y herramientas",
+    "description": "Estas son las tecnologías, librerías y herramientas que conozco."
   }
 }

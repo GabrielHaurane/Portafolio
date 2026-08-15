@@ -1,17 +1,15 @@
-import { useState } from "react";
 import Menu from "./components/common/Menu";
 import Home from "./components/pages/Home";
 import Proyectos from "./components/pages/Proyectos";
 import Contacto from "./components/pages/Contacto";
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import Tecnologias from "./components/pages/Tecnologias";
+import { Route, Routes } from 'react-router-dom';
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Footer from "./components/common/Footer";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 function App() {
-  const [count, setCount] = useState(0);
   return (
     <div className="d-flex flex-column min-vh-100">
     <Menu></Menu>
@@ -20,6 +18,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/proyectos" element={<Proyectos />} />
         <Route exact path="/contacto" element={<Contacto />} />
+        <Route exact path="/tecnologias" element={<Tecnologias />} />
       </Routes>
     </main>
       <Footer></Footer>

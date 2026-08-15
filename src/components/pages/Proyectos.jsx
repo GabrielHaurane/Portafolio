@@ -4,6 +4,7 @@ import recetasHaurane from "./../../img/recetasHaurane.png";
 import swaply from "../../img/swaply.png";
 import ProjectCardTec from "./cuadroProyectos/ProjectCardTec";
 import ProjectCardPas from "./cuadroProyectos/ProjectCardPas";
+import ProjectCardApp from "./cuadroProyectos/ProjectCardApp";
 const Proyectos = () => {
   const { t } = useTranslation();
   return (
@@ -13,6 +14,12 @@ const Proyectos = () => {
         <div className="container py-4">
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             <div className="w-100 h-100">
+              <ProjectCardApp
+                title={t("gh_app.title")}
+                featuresTitle={t("gh_app.features_title")}
+                features={t("gh_app.features", { returnObjects: true })}
+                githubLink="https://github.com/GabrielHaurane/GHProgramingApp"
+              />
               <ProjectCardTec
                 img={hotelCodeImg}
                 title={t("project1_title")}

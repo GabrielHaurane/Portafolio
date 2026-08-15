@@ -56,7 +56,7 @@ const FormularioPosible = ({name, email, message, button, successMessage, errorM
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="p-4 border rounded shadow col-11 col-xl-8 mt-3"
-        style={{ backgroundColor: "#5a297a" }}
+        style={{ backgroundColor: "var(--color-form)" }}
       >
         <div className="mb-3">
           <label htmlFor="name" className="form-label">{name}</label>
@@ -118,7 +118,7 @@ const FormularioPosible = ({name, email, message, button, successMessage, errorM
       </form>
 
       <Modal show={showModal && modalType === "success"} onHide={handleCloseModal} centered>
-        <Modal.Header closeButton style={{ backgroundColor: "#28a745", color: "white" }}>
+        <Modal.Header closeButton style={{ backgroundColor: "var(--color-success)", color: "white" }}>
           <Modal.Title>✅ {successMessage || "¡Mensaje enviado con éxito!"}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -132,7 +132,7 @@ const FormularioPosible = ({name, email, message, button, successMessage, errorM
       </Modal>
 
       <Modal show={showModal && modalType === "error"} onHide={handleCloseModal} centered>
-        <Modal.Header closeButton style={{ backgroundColor: "#dc3545", color: "white" }}>
+        <Modal.Header closeButton style={{ backgroundColor: "var(--color-error)", color: "white" }}>
           <Modal.Title>❌ {errorMessage || "Error al enviar el mensaje"}</Modal.Title>
         </Modal.Header>
         <Modal.Body>

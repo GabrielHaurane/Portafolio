@@ -26,7 +26,7 @@ const Form = ({name, email, message, button, successMessage, errorMessage}) => {
       );
   };
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="p-4 border rounded shadow w-50 ms-5 mt-5 " style={{ backgroundColor: "#5a297a" }}>
+        <form onSubmit={handleSubmit(onSubmit)} className="p-4 border rounded shadow w-50 ms-5 mt-5 " style={{ backgroundColor: "var(--color-form)" }}>
       <div className="mb-3">
         <label htmlFor="name" className="form-label">{name}</label>
         <input

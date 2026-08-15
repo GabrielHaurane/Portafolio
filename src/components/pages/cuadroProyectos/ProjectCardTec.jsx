@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import TecIcons from "../tecnologias/TecIcons";
+import LoadingImage from "../../common/LoadingImage";
 const ProjectCardTec = ({
   img,
   title,
@@ -16,13 +17,13 @@ const ProjectCardTec = ({
     <div
       className="card text-white shadow flex-md-row flex-md-wrap flex-column h-50 mb-4"
       style={{
-        backgroundColor: "#1e082c",
+        backgroundColor: "var(--color-card)",
         borderRadius: "40px",
       }}
     >
       {/* Imagen a la izquierda en pantallas medianas en adelante */}
       <div className="rounded-top-1 card-img-left d-flex justify-content-center align-items-center col-md-4 col-12 w-100">
-        <img
+        <LoadingImage
           src={img}
           className="img-fluid w-100 h-100 rounded-top-5 border-top border-black"
           alt={title}

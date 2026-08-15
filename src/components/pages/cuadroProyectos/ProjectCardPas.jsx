@@ -1,18 +1,19 @@
 import React from 'react';
 import { useTranslation } from "react-i18next";
 import PasIcons from '../tecnologias/PasIcons';
+import LoadingImage from "../../common/LoadingImage";
 const ProjectCardPas = ({ img, title, featuresTitle, features, githubLink, liveLink, technologiesTitle, role, duration  }) => {
      const { t } = useTranslation();
         return (
              <div
           className="card text-white shadow flex-md-row flex-md-wrap flex-column h-50 mb-4"
           style={{
-            backgroundColor: "#1e082c",
+            backgroundColor: "var(--color-card)",
             borderRadius: '40px'
           }}
         >
           <div className="card-img-left d-flex justify-content-center align-items-center col-md-4 col-12 w-100" >
-            <img
+            <LoadingImage
               src={img}
               className="img-fluid w-100 h-100"
               alt={title}
