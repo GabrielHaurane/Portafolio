@@ -11,6 +11,6 @@
 3. **Un único formulario de contacto: `FormularioPosible.jsx`** (montado en `Contacto.jsx:48-55`). `formulario/Form.jsx` es código muerto que importa `emailjs-com`, paquete **no instalado**: importarlo rompe el build.
 4. **Todo texto visible sale de `t()` y existe en los dos idiomas.** `src/locales/es` y `src/locales/en` hoy tienen paridad exacta de claves; no romperla (`i18n.js:6-12`, fallback `es`).
 5. **Colores solo por tokens.** Toda la paleta vive en `:root` de `src/App.css:1-11` (`--color-*`). Ningún hex nuevo en JSX ni CSS.
-6. **Rutas declarativas.** Toda página se registra en `<Routes>` de `App.jsx:17-22` y se enlaza con `<NavLink>` en **las dos** navegaciones de `Menu.jsx` (sidebar `:19-42` y offcanvas `:92-111`). Nunca `<a href>` ni `window.open` para rutas internas.
+6. **Rutas declarativas.** Toda página se registra en `<Routes>` de `App.jsx:17-22` y se enlaza agregando una entrada al array `navItems` de `Menu.jsx` (navbar superior única, `<Nav.Link as={NavLink} eventKey>`). Dentro de las páginas, los enlaces internos usan `<Link>`. Nunca `<a href>` ni `window.open` para rutas internas (las anclas `#seccion` del Home sí son `<a href>`).
 7. **No editar artefactos generados.** `dist/` y `.vite/` son salida de Vite. (`.vite/` además está versionado por error: 28 archivos trackeados.)
 8. **Ningún cambio se cierra sin `npm run build` verde y 0 errores nuevos de ESLint en `src/`.** No hay tests; el build y el lint son la única verificación automática (`package.json:6-11`).

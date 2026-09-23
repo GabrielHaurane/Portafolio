@@ -7,7 +7,7 @@
   "project1_title": "Hotel Code",
   "project1_features_title": "Features",
   "bool":"State",
-  "status":"inactive",
+  "status":"database being restructured",
   "project1_features": [
     "Room Search: Filter rooms based on availability and other criteria.",
     "Bookings: Complete reservations by specifying check-in and check-out dates.",
@@ -34,6 +34,26 @@
       "It currently includes levels 1 and 2 to get started."
     ]
   },
+  "inventory_app": {
+    "title": "GH Inventory Control System",
+    "version": "v1.0",
+    "summary": "Desktop system for a neighborhood distributor: manages stock, purchases and sales with three user roles.",
+    "problem_title": "The problem",
+    "problem": "The distributor had no reliable way to track its stock and sales.",
+    "roles_title": "User roles",
+    "roles": [
+      "Administrator: registers managers and employees, views deactivated users and reactivates them.",
+      "Manager: creates, updates and deletes products and customers, handles stock purchases and sales.",
+      "Employee: makes in-store sales or sales to a specific customer."
+    ],
+    "highlights_title": "Technical highlights",
+    "highlights": [
+      "Role-based access control.",
+      "Soft delete with reactivation.",
+      "University final project in C# with Windows Forms and MySQL."
+    ],
+    "status": "Version 1.0 — v2.0 in planning."
+  },
   "button_github": "View on GitHub",
   "button_live": "Visit Website",
   "title_projetcs": "My Projects",
@@ -45,7 +65,9 @@
     "contact": "Contact",
     "technologies": "Technologies",
     "cv": "View CV",
-    "drive":"https://drive.google.com/file/d/1_2VAquom2EFTNW2qwjX0SS60f44UYhRq/view?usp=sharing"
+    "drive":"https://drive.google.com/file/d/1_2VAquom2EFTNW2qwjX0SS60f44UYhRq/view?usp=sharing",
+    "brand": "Gabriel Haurane",
+    "toggle": "Open navigation menu"
   },
   "experience": {
   "title": "Professional Experience",
@@ -86,13 +108,57 @@
       "message_min": "Message must be at least 10 characters long"
     }
   },
+  "common": {
+    "watch_video": "Watch video"
+  },
   "a11y": {
     "profile_photo": "Profile photo of Gabriel Haurane",
     "loading_image": "Loading image",
-    "loading_video": "Loading video"
+    "loading_video": "Loading video",
+    "github_profile": "Gabriel Haurane's GitHub profile",
+    "linkedin_profile": "Gabriel Haurane's LinkedIn profile"
   },
   "technologies_page": {
     "title": "Technologies and tools",
     "description": "These are the technologies, libraries, and tools I know."
+  },
+  "home_page": {
+    "hero": {
+      "eyebrow": "Frontend Developer · Tucumán, Argentina",
+      "title": "Frontend Developer with real product experience: I built features for a fintech (SwaplyAr) with Next.js and TypeScript.",
+      "subtitle": "I've also built complete web apps with React and Bootstrap, deployed and open source on GitHub.",
+      "cta_projects": "See projects",
+      "cta_contact": "Contact me"
+    },
+    "featured": {
+      "title": "Featured projects",
+      "subtitle": "A selection of what I've built, with a demo or video and the source code available.",
+      "see_all": "See all projects",
+      "play_video": "Play the video of {{title}}",
+      "screenshot_alt": "Screenshot of {{title}}",
+      "items": {
+        "gh_app": "Desktop app for learning to code: level-based theory, quizzes and a tutorial that places each learner at the right level.",
+        "hotel_code": "Hotel booking system: room search by availability, date-based reservations and user sign-up.",
+        "recetas": "Recipe blog with search and category filters, a detailed view and favorites saved in the browser."
+      }
+    },
+    "experience": {
+      "screenshot_alt": "Screenshot of {{company}}"
+    },
+    "stack": {
+      "title": "Stack with evidence",
+      "subtitle": "Every technology linked to where I used it.",
+      "used_in": "Used in:",
+      "this_portfolio": "This portfolio",
+      "see_all": "See all technologies"
+    },
+    "contact": {
+      "title": "Let's talk",
+      "text": "I'm looking for my next frontend developer role. Reach out through whichever channel you prefer.",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "linkedin": "LinkedIn",
+      "cta_form": "Go to the contact form"
+    }
   }
 }

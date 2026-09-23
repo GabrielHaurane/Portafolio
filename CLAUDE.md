@@ -12,11 +12,11 @@ Portafolio personal de Gabriel Haurane (desarrollador, Tucumán). SPA Vite + Rea
 npm run dev       # servidor Vite
 npm run build     # build de producción → dist/  (hoy pasa)
 npm run lint      # eslint .  → hoy FALLA con ~385 errores, casi todos de .vite/
-npx eslint src    # lo que importa: hoy 2 errores preexistentes (ver "Deuda")
+npx eslint src    # lo que importa: hoy 0 errores (verificado al cerrar la Fase 2)
 npm run preview
 ```
 
-`npm run lint` falla porque `eslint.config.js:8` solo ignora `dist` y `.vite/` (caché de Vite) está versionado. **Para juzgar un cambio usá `npx eslint src`** y compará contra la línea base de 2 errores. No existe script `test`.
+`npm run lint` falla porque `eslint.config.js:8` solo ignora `dist` y `.vite/` (caché de Vite) está versionado. **Para juzgar un cambio usá `npx eslint src`** y compará contra la línea base de 0 errores. No existe script `test`.
 
 ## Paths y alias
 
@@ -27,18 +27,21 @@ No hay alias (`vite.config.js` solo carga `@vitejs/plugin-react`) ni `jsconfig`.
 ```
 src/
   main.jsx              entrada: StrictMode + BrowserRouter + ./i18n
-  App.jsx               layout (Menu / <main> / Footer) + <Routes>
+  App.jsx               layout (Menu / <main> / Footer) + <Routes> + scroll arriba al cambiar de ruta
   App.css               tokens --color-* y todas las clases propias
   i18n.js               init i18next (lng y fallback 'es')
-  data/data.jsx         arrays {icon, title} de tecnologías por tarjeta
+  data/data.jsx         arrays {icon, title} por tarjeta + datos del Home: techCatalog,
+                        contactLinks, featuredProjects, experiences, evidenceSources, stackEvidence
   locales/{es,en}/translation.json
   img/                  capturas de proyectos (hotelCode, recetasHaurane, swaply)
   components/
     LanguageSwitcher.jsx        ⚠ solo lo usa Menu → debería vivir en common/
     assets/                     fotoDePerfil.jpg, logoGH.png (favicon en index.html:6)
-    common/                     Menu, Footer, LoadingImage, LoadingIframe
+    common/                     Menu (navbar sticky), Footer, LoadingImage, LoadingIframe
     pages/
       Home.jsx  Proyectos.jsx  Contacto.jsx  Tecnologias.jsx
+      inicio/                   secciones del Home: HeroSection, FeaturedProjects(+Card),
+                                ExperienceSection, StackEvidence, ContactSection, TechChips
       cuadroProyectos/          ProjectCardApp / Tec / Pas  (+ ProjectCard muerto)
       formulario/               FormularioPosible (activo) + Form (muerto)
       tecnologias/              TecIcons, PasIcons, AppTechnologyIcons, TechnologyGrid
@@ -47,7 +50,6 @@ src/
 **Regla de ubicación:** si lo usa una sola página, vive en la subcarpeta de esa página (`pages/<carpeta>/`); si lo usan 2+ páginas, sube a `components/common/`. No crear `hooks/`, `services/` ni `stores/` vacíos.
 
 Violaciones actuales (no moverlas sin pedido; aplicar la regla a código nuevo):
-- `cuadroProyectos/ProjectCardApp.jsx` lo usan `Home.jsx:2` y `Proyectos.jsx:7` → correspondería a `common/`.
 - `tecnologias/` mezcla la grilla de la página Tecnologías (`TechnologyGrid`) con los íconos que consumen las tarjetas (`TecIcons`, `PasIcons`, `AppTechnologyIcons`).
 - `common/LoadingIframe.jsx` tiene un único consumidor (`ProjectCardApp.jsx:3`); se tolera como primitivo genérico.
 - Dos carpetas de imágenes: `src/img/` (proyectos) y `src/components/assets/` (marca personal). Capturas nuevas → `src/img/`.
@@ -77,12 +79,12 @@ Violaciones actuales (no moverlas sin pedido; aplicar la regla a código nuevo):
 | UI local de un componente | `useState` | `LoadingImage.jsx:4`, modal en `FormularioPosible.jsx:7-9` |
 | Formularios | `react-hook-form` (`register`, `handleSubmit`, `reset`) | `FormularioPosible.jsx:11-16` |
 | Idioma actual | `i18n.language` / `i18n.changeLanguage` vía `useTranslation` | `LanguageSwitcher.jsx:5-9` |
-| Página actual | la URL (`react-router`); `NavLink` para estado activo | `Menu.jsx:19-22` |
+| Página actual | la URL (`react-router`); `NavLink` para estado activo | `navItems` en `Menu.jsx` |
 | Estado compartido / persistencia | **No existe.** No agregar Context, store ni `localStorage` sin pedido explícito | — |
 
 ## Estilos y tema
 
-- Bootstrap 5 (utilidades + grid) es la base; react-bootstrap se usa solo para `Nav`, `Button`, `Modal`. El offcanvas móvil usa JS vanilla de Bootstrap (`App.jsx:11`, `data-bs-*` en `Menu.jsx:72-73,93`).
+- Bootstrap 5 (utilidades + grid) es la base; react-bootstrap se usa para `Navbar`, `Nav`, `Container`, `Button`, `Modal`. La navbar es `<Navbar expand="lg" sticky="top" collapseOnSelect>`: el colapso móvil lo maneja react-bootstrap, así que **no** se importa `bootstrap.bundle` ni se usan atributos `data-bs-*`.
 - Un solo tema oscuro violeta, sin modo claro. Tokens en `App.css:1-11`.
 - Íconos: UI → `bootstrap-icons` (`<i className="bi bi-…">`); logos de tecnologías → `react-icons/si` (o `fa`) con `size={30}` en `data.jsx`.
 - Detalle y deuda (inline styles, hex sueltos): `.claude/rules/estilos.md`.
@@ -93,12 +95,13 @@ Todo texto visible con `t("clave")`, clave presente en `es` y `en`. Detalle: `.c
 
 ## Testing
 
-No hay tests ni CI (`.github/` no existe), ni hooks de git activos. Verificación = `npm run build` + `npx eslint src` + prueba manual en `npm run dev`: las 4 rutas, cambio de idioma, menú móvil (offcanvas) y, si se tocó, el formulario. El agente `verificador` automatiza la parte mecánica.
+No hay tests ni CI (`.github/` no existe), ni hooks de git activos. Verificación = `npm run build` + `npx eslint src` + prueba manual en `npm run dev`: las 4 rutas, cambio de idioma, navbar colapsada en móvil (se cierra al elegir un link), anclas del Home y, si se tocó, el formulario. El agente `verificador` automatiza la parte mecánica.
 
 ## Tareas frecuentes
 
-- **Agregar/editar un proyecto o experiencia** → skill `agregar-proyecto`.
-- **Agregar una página** (último caso: `/tecnologias` en 93d9c35): 1) `pages/<Nombre>.jsx`; 2) `import` + `<Route path=…>` en `App.jsx` **sin** `exact` (prop de v5, no hace nada en v7; las rutas actuales la arrastran); 3) `NavLink` en **las dos** navs de `Menu.jsx` (sidebar con `className={({isActive})=>…}`, offcanvas con el `<div data-bs-dismiss="offcanvas">`); 4) clave `menu.<x>` + namespace `<pagina>_page` en ambos locales. Contenedor raíz: `col-12 col-lg-9 col-xl-10 px-2 pt-3 pe-lg-3 pe-xl-4` (`Proyectos.jsx:11`, `Tecnologias.jsx:8`).
+- **Agregar/editar un proyecto o experiencia** → skill `agregar-proyecto`. En el Home es data-driven: una entrada en `featuredProjects` / `experiences` / `stackEvidence` (`data.jsx`) + sus textos en un namespace propio (`inventory_app.*`) o en `home_page.*`; los componentes de `pages/inicio/` no se tocan. Campos opcionales de `featuredProjects` (Fase 3): `highlight` (tarjeta ancha arriba de la grilla), `videoLink` (botón de play sobre la imagen + botón "Ver video"), `embedSrc` (iframe en `/proyectos`), `badgeKey` (badge corto, p. ej. la versión). Las tecnologías se referencian por clave de `techCatalog`.
+- **Textos compartidos entre páginas** → namespace `common.*` (hoy: `common.watch_video`, usado en Inicio y Proyectos).
+- **Agregar una página** (último caso: `/tecnologias` en 93d9c35): 1) `pages/<Nombre>.jsx`; 2) `import` + `<Route path=…>` en `App.jsx` **sin** `exact` (prop de v5, no hace nada en v7; las rutas actuales la arrastran); 3) una entrada `{ to, labelKey }` en `navItems` de `Menu.jsx`; 4) clave `menu.<x>` + namespace `<pagina>_page` en ambos locales. Contenedor raíz: `container py-4` (`Proyectos.jsx`, `Tecnologias.jsx`, `Contacto.jsx`).
 - ⚠ La skill personal `agregar-pagina` describe **otro repo** (Hotel Code: `Catalogo.jsx`, `RutasAdmin`, `helpers/queries`). No aplica acá: usá el checklist de arriba.
 
 ## Commits y ramas
@@ -109,9 +112,11 @@ No hay tests ni CI (`.github/` no existe), ni hooks de git activos. Verificació
 ## Deuda conocida (no replicar, no "arreglar de paso" sin pedido)
 
 - `ProjectCard.jsx` y `Form.jsx`: nadie los importa. `serviceData` (`data.jsx:4`) no se usa. `data.jsx:2-3` importa íconos sin uso (`FaFilePdf`, `FaLinkedin`, `BookText`, `Square`, `HomeIcon`, `UserRound`) que ESLint no marca por `varsIgnorePattern: '^[A-Z_]'` (`eslint.config.js:25`).
-- Lint base en `src/`: `liveLink` sin usar en `ProjectCard.jsx:12` y `ProjectCardTec.jsx:12` (la tarjeta Tec no muestra botón "Ver Página").
-- Cada tipo de tarjeta tiene su propio componente de íconos con array fijo (`TecIcons`→`proIcons`, etc.): todas las tarjetas Tec muestran el mismo stack. El embed de Loom está fijo en `ProjectCardApp.jsx:11`.
-- Datos de contacto duplicados (mail y WhatsApp en `Contacto.jsx:20,35` y `FormularioPosible.jsx:145,155`; GitHub/LinkedIn dos veces en `Menu.jsx`). Si cambian, cambiar todas las copias.
+- Lint base en `src/`: 0 errores.
+- `TecIcons`→`proIcons` y `PasIcons`→`pasantiaIcons` siguen con array fijo: todas las tarjetas Tec muestran el mismo stack. `AppTechnologyIcons` ya acepta `items` (por defecto `appTechnologies`) y `ProjectCardApp` acepta `technologies` (claves de `techCatalog`), `videoSrc` (por defecto el Loom de GHProgrammingApp), `videoLink` y `sections=[{ title, items }]`: ese es el patrón para tarjetas nuevas.
+- **`Proyectos.jsx` solo lee de `featuredProjects` la tarjeta de `inventory_app`.** GHProgrammingApp, Hotel Code, Recetas y SwaplyAr siguen con links y textos escritos a mano (y claves viejas `projectN_*`): los datos están duplicados con `data.jsx`; si cambia un link, cambiarlo en los dos lugares.
+- Datos de contacto: la fuente es `contactLinks` (`data.jsx`), usada por `Menu`, el Home y `Contacto`. Quedan copias literales en `FormularioPosible.jsx:145,155`: si cambian, cambiarlas también.
+- **Claves i18n viejas del Home, sin uso desde la Fase 2 — pendientes de borrar en `es` y `en`:** `greeting`, `name`, `description`, `description2`, `projects_intro`.
 - Imágenes de 0.4–1.4 MB sin optimizar (salida de `npm run build`).
 - README desactualizado (no menciona GHProgrammingApp ni SwaplyAr).
 
@@ -120,11 +125,11 @@ No hay tests ni CI (`.github/` no existe), ni hooks de git activos. Verificació
 | # | Regla | Cómo verificar |
 |---|---|---|
 | 1 | Build verde | `npm run build` |
-| 2 | 0 errores nuevos de lint en `src/` (base: 2) | `npx eslint src` |
+| 2 | 0 errores nuevos de lint en `src/` (base: 0) | `npx eslint src` |
 | 3 | Claves i18n con paridad es/en | agente `verificador` |
 | 4 | Sin texto visible hardcodeado nuevo | revisar diff: strings fuera de `t()` en JSX |
 | 5 | Sin hex/rgb nuevos; solo `var(--color-*)` | `git diff \| grep -E "#[0-9a-fA-F]{3,6}\|rgb"` |
 | 6 | Sin `style={{…}}` nuevo si existe o puede existir una clase | revisar diff |
-| 7 | Ruta nueva: `App.jsx` + 2 NavLinks en `Menu.jsx` | leer ambos |
+| 7 | Ruta nueva: `App.jsx` + entrada en `navItems` de `Menu.jsx` | leer ambos |
 | 8 | No tocar `dist/`, `.vite/`, `Form.jsx`, `ProjectCard.jsx` | `git status` |
 | 9 | Ninguna credencial literal; solo `import.meta.env.VITE_*` | revisar diff |

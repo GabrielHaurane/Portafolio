@@ -5,19 +5,37 @@ import swaply from "../../img/swaply.png";
 import ProjectCardTec from "./cuadroProyectos/ProjectCardTec";
 import ProjectCardPas from "./cuadroProyectos/ProjectCardPas";
 import ProjectCardApp from "./cuadroProyectos/ProjectCardApp";
+import { featuredProjects } from "../../data/data.jsx";
+
+const inventoryApp = featuredProjects.find((project) => project.id === "inventory_app");
+
 const Proyectos = () => {
   const { t } = useTranslation();
   return (
-    <div className=" d-flex align-content-start flex-column col-12 col-lg-9 col-xl-10 px-2 pt-3 pe-lg-3 pe-xl-4 ">
+    <div className="container py-4">
       <div className=" text-start">
         <h1>{t("title_projetcs")}</h1>
         <div className="container py-4">
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             <div className="w-100 h-100">
               <ProjectCardApp
+                title={t(inventoryApp.titleKey)}
+                sections={[
+                  { title: t("inventory_app.problem_title"), items: [t("inventory_app.problem")] },
+                  { title: t("inventory_app.roles_title"), items: t("inventory_app.roles", { returnObjects: true }) },
+                  { title: t("inventory_app.highlights_title"), items: t("inventory_app.highlights", { returnObjects: true }) },
+                  { title: t("bool"), items: [t("inventory_app.status")] },
+                ]}
+                technologies={inventoryApp.technologies}
+                videoSrc={inventoryApp.embedSrc}
+                videoLink={inventoryApp.videoLink}
+                githubLink={inventoryApp.githubLink}
+              />
+              <ProjectCardApp
                 title={t("gh_app.title")}
-                featuresTitle={t("gh_app.features_title")}
-                features={t("gh_app.features", { returnObjects: true })}
+                sections={[
+                  { title: t("gh_app.features_title"), items: t("gh_app.features", { returnObjects: true }) },
+                ]}
                 githubLink="https://github.com/GabrielHaurane/GHProgramingApp"
               />
               <ProjectCardTec
