@@ -1,16 +1,16 @@
-# Constitution
+# Constitución — Portafolio de Gabriel Haurane
 
-## Identidad
+**Qué es:** SPA estática de portafolio personal (Inicio, Proyectos y Experiencia, Contacto, Tecnologías), bilingüe es/en. Sin backend propio: el único efecto remoto es el envío de mails por EmailJS desde el navegador.
 
-Este repositorio es un portafolio web estático en **JavaScript/JSX**, construido con **Vite 7 + React 19**, `react-router-dom` 7, Bootstrap/react-bootstrap e i18next. El formulario de contacto usa EmailJS desde el navegador. No hay TypeScript, backend, cliente HTTP, estado global, persistencia implementada en este repositorio ni suite de tests.
+**Stack fijo:** Vite 7 + React 19 en **JavaScript/JSX (0 archivos .ts)** · react-router-dom 7 · Bootstrap 5 + react-bootstrap · i18next/react-i18next · react-hook-form · @emailjs/browser (`package.json:12-38`).
 
-## Principios no negociables
+## Máximas no negociables
 
-1. **Mantener el stack real.** No introducir TypeScript, otro bundler, otro router o una librería de estado sin una migración explícita y completa. La fuente de verdad actual es `package.json:5-37`, `src/main.jsx:1-13` y `src/App.jsx:1-23`.
-2. **No exponer secretos.** Solo las variables `VITE_*` necesarias para EmailJS pueden llegar al cliente; nunca agregar credenciales privadas al código ni a archivos versionados. El flujo actual está en `src/components/pages/formulario/FormularioPosible.jsx:29-34` y `.gitignore:10-15`; Vite expone las variables con ese prefijo.
-3. **Usar un único flujo de contacto activo.** El formulario montado es `FormularioPosible`, incluido por `src/components/pages/Contacto.jsx:3,48-55`; `src/components/pages/formulario/Form.jsx` es legado no montado y no debe recibir nuevas funcionalidades.
-4. **Validar antes de enviar y representar estados asíncronos.** Todo envío debe pasar por `react-hook-form`, bloquear el formulario durante la solicitud y manejar éxito/error. Ese contrato está implementado en `FormularioPosible.jsx:11-18,29-47,56-116`.
-5. **Preservar navegación declarativa.** Las rutas públicas son `/`, `/proyectos` y `/contacto`, declaradas en `src/App.jsx:19-23` y montadas bajo `BrowserRouter` en `src/main.jsx:8-13`. No usar navegación manual para enlaces internos.
-6. **Mantener las traducciones completas.** El texto visible debe resolverse con `useTranslation` y existir en `src/locales/es/translation.json` y `src/locales/en/translation.json`; el inicializador y fallback están definidos en `src/i18n.js:6-15`.
-7. **Respetar el sistema visual existente.** Usar Bootstrap/react-bootstrap y las clases/tokens visuales ya presentes en `src/App.css:14-20,48-70` antes de crear estilos nuevos. Los estilos inline repetidos son deuda, no un patrón a expandir.
-8. **No cerrar cambios con validación incompleta.** Ejecutar `npm run build` y `npm run lint`, reportando explícitamente cualquier fallo. Son los únicos comandos de validación declarados en `package.json:7-11`; actualmente el build pasa y lint detecta deuda existente.
+1. **No cambiar el stack sin migración explícita.** Ni TypeScript, ni otro router, ni librería de estado global. **Tailwind no se usa**: `@tailwindcss/*` está declarado en `package.json:28-29` pero no tiene config ni una sola clase en `src/`; es dependencia muerta.
+2. **Ningún secreto en el código.** EmailJS se configura solo con `import.meta.env.VITE_SERVICE_ID / VITE_TEMPLATE_ID / VITE_PUBLIC_KEY` (`FormularioPosible.jsx:29-34`). `.env` está ignorado (`.gitignore:14`) y no se versiona.
+3. **Un único formulario de contacto: `FormularioPosible.jsx`** (montado en `Contacto.jsx:48-55`). `formulario/Form.jsx` es código muerto que importa `emailjs-com`, paquete **no instalado**: importarlo rompe el build.
+4. **Todo texto visible sale de `t()` y existe en los dos idiomas.** `src/locales/es` y `src/locales/en` hoy tienen paridad exacta de claves; no romperla (`i18n.js:6-12`, fallback `es`).
+5. **Colores solo por tokens.** Toda la paleta vive en `:root` de `src/App.css:1-11` (`--color-*`). Ningún hex nuevo en JSX ni CSS.
+6. **Rutas declarativas.** Toda página se registra en `<Routes>` de `App.jsx:17-22` y se enlaza con `<NavLink>` en **las dos** navegaciones de `Menu.jsx` (sidebar `:19-42` y offcanvas `:92-111`). Nunca `<a href>` ni `window.open` para rutas internas.
+7. **No editar artefactos generados.** `dist/` y `.vite/` son salida de Vite. (`.vite/` además está versionado por error: 28 archivos trackeados.)
+8. **Ningún cambio se cierra sin `npm run build` verde y 0 errores nuevos de ESLint en `src/`.** No hay tests; el build y el lint son la única verificación automática (`package.json:6-11`).
