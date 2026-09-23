@@ -72,7 +72,24 @@
     "message": "Mensaje",
     "button": "Enviar",
     "success": "¡Mensaje enviado con éxito!",
-    "error": "Error al enviar el mensaje. En caso de problemas para enviar el mensaje, contáctame directamente con el correo electrónico o por WhatsApp."
+    "error": "Error al enviar el mensaje. En caso de problemas para enviar el mensaje, contáctame directamente con el correo electrónico o por WhatsApp.",
+    "sending": "Enviando...",
+    "success_body": "Tu mensaje ha sido enviado correctamente. Te responderé lo antes posible.",
+    "error_body": "En caso de problemas para enviar el mensaje, contáctame directamente:",
+    "send_email": "Enviar por correo electrónico",
+    "send_whatsapp": "Contactar por WhatsApp",
+    "close": "Cerrar",
+    "validation": {
+      "required": "Este campo es obligatorio",
+      "name_min": "El nombre debe tener al menos 2 caracteres",
+      "email_invalid": "Email inválido",
+      "message_min": "El mensaje debe tener al menos 10 caracteres"
+    }
+  },
+  "a11y": {
+    "profile_photo": "Foto de perfil de Gabriel Haurane",
+    "loading_image": "Cargando imagen",
+    "loading_video": "Cargando video"
   },
   "technologies_page": {
     "title": "Tecnologías y herramientas",

@@ -61,6 +61,17 @@ const ProjectCardTec = ({
               {t("button_github")}
             </a>
           )}
+          {liveLink && (
+            <a
+              href={liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline-violet"
+            >
+              <i className="bi bi-box-arrow-up-right me-1"></i>
+              {t("button_live")}
+            </a>
+          )}
         </div>
       </div>
     </div>

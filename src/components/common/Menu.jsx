@@ -13,7 +13,7 @@ const Menu = () => {
       {/* Sidebar fijo - escritorio */}
       <div className="sidebar d-none d-lg-flex flex-column justify-content-between p-3 text-white position-fixed" style={{ width: "250px", height: "100vh" }}>
         <div>
-          <LoadingImage src={miFoto} alt="Tu Foto" className="sidebar-img mb-4" />
+          <LoadingImage src={miFoto} alt={t("a11y.profile_photo")} className="sidebar-img mb-4" />
 
           <Nav className="flex-column">
             <NavLink
@@ -86,7 +86,7 @@ const Menu = () => {
       >
         <div className="offcanvas-body d-flex flex-column justify-content-between">
           <div>
-            <LoadingImage src={miFoto} alt="Tu Foto" className="sidebar-img mb-4" />
+            <LoadingImage src={miFoto} alt={t("a11y.profile_photo")} className="sidebar-img mb-4" />
 
             <Nav className="flex-column">
               <NavLink to="/" className="nav-link text-white" >

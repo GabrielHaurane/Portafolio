@@ -45,14 +45,7 @@ const Contacto = () => {
           <h4 className="d-flex justify-content-center col-11">{t("information.description")}</h4>
         </div>
         <div className="d-flex justify-content-center col-12 col-lg-9 col-xl-10 pt-3">
-        <FormularioPosible
-          name={t("form.name")}
-          email={t("form.email")}
-          message={t("form.message")}
-          button={t("form.button")}
-          successMessage={t("form.success")}
-          errorMessage={t("form.error")}
-        />
+        <FormularioPosible />
         </div>
       </div>
     </>
