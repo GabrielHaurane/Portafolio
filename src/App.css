@@ -458,3 +458,41 @@ body,
   font-weight: 600;
   vertical-align: middle;
 }
+
+/* ---------- Sección Stack por categorías (Fase 3.6) ---------- */
+
+/* Un solo acordeón (react-bootstrap Accordion) en todos los tamaños, con los
+   tokens del tema. Doble clase para ganarle a .accordion de Bootstrap, que se carga después. */
+.accordion.stack-accordion {
+  --bs-accordion-bg: var(--color-card);
+  --bs-accordion-color: var(--color-text);
+  --bs-accordion-border-color: var(--color-border);
+  --bs-accordion-btn-color: var(--color-text);
+  --bs-accordion-btn-bg: var(--color-card);
+  --bs-accordion-active-color: var(--color-accent);
+  --bs-accordion-active-bg: color-mix(in srgb, var(--color-accent) 12%, var(--color-card));
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--color-accent) 25%, transparent);
+}
+
+/* La flecha de Bootstrap es un SVG con el color fijo adentro. Se usa ese SVG como
+   máscara y se pinta con un token: texto cerrada, acento abierta. Bootstrap sigue
+   haciendo la rotación. Prefijos -webkit- para Safari. */
+.stack-accordion .accordion-button::after {
+  background-image: none;
+  background-color: var(--color-text);
+  -webkit-mask-image: var(--bs-accordion-btn-icon);
+  mask-image: var(--bs-accordion-btn-icon);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: var(--bs-accordion-btn-icon-width);
+  mask-size: var(--bs-accordion-btn-icon-width);
+}
+
+.stack-accordion .accordion-button:not(.collapsed)::after {
+  background-image: none;
+  background-color: var(--color-accent);
+  -webkit-mask-image: var(--bs-accordion-btn-active-icon);
+  mask-image: var(--bs-accordion-btn-active-icon);
+}

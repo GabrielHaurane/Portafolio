@@ -41,7 +41,7 @@ src/
     pages/
       Home.jsx  Proyectos.jsx  Contacto.jsx  Tecnologias.jsx
       inicio/                   secciones del Home: HeroSection, FeaturedProjects(+Card),
-                                ExperienceSection, StackEvidence, ContactSection, TechChips
+                                ExperienceSection, StackEvidence (+StackCategoryGrid), ContactSection, TechChips
       cuadroProyectos/          ProjectCardApp / Tec / Pas  (+ ProjectCard muerto)
       formulario/               FormularioPosible (activo) + Form (muerto)
       tecnologias/              TecIcons, PasIcons, AppTechnologyIcons, TechnologyGrid
@@ -96,7 +96,7 @@ Violaciones actuales (no moverlas sin pedido; aplicar la regla a código nuevo):
 
 ## i18n
 
-Todo texto visible con `t("clave")`, clave presente en `es` y `en`. Detalle: `.claude/rules/i18n.md`. El link del CV es una traducción (`menu.drive`), así que "cambiar el CV" = editar esa clave en ambos JSON (5 commits "cambio de cv").
+Todo texto visible con `t("clave")`, clave presente en `es` y `en`. Detalle: `.claude/rules/i18n.md`. El CV vive en el repo, uno por idioma: `public/cv/DEV_Gabriel_Haurane_CV_ES.pdf` y `public/cv/DEV_Gabriel_Haurane_CV_EN.pdf`. La ruta es una traducción (`menu.cv_url`: `/cv/…_ES.pdf` en `es`, `/cv/…_EN.pdf` en `en`), leída con `t("menu.cv_url")` en `Menu.jsx` y `HeroSection.jsx`, así que el link cambia con el idioma. "Cambiar el CV" = reemplazar el PDF en `public/cv/` **con el mismo nombre**; si cambia el nombre, actualizar `menu.cv_url` en ambos JSON. Los links al CV mantienen `target="_blank" rel="noopener noreferrer"`.
 
 ## Testing
 
@@ -105,6 +105,7 @@ No hay tests ni CI (`.github/` no existe), ni hooks de git activos. Verificació
 ## Tareas frecuentes
 
 - **Agregar/editar un proyecto o experiencia** → skill `agregar-proyecto`. En el Home es data-driven: una entrada en `featuredProjects` / `experiences` / `stackEvidence` (`data.jsx`) + sus textos en un namespace propio (`inventory_app.*`) o en `home_page.*`; los componentes de `pages/inicio/` no se tocan. Campos opcionales de `featuredProjects` (Fase 3): `highlight` (tarjeta ancha arriba de la grilla), `videoLink` (botón de play sobre la imagen + botón "Ver video"), `embedSrc` (iframe en `/proyectos`), `badgeKey` (badge corto, p. ej. la versión). Las tecnologías se referencian por clave de `techCatalog`.
+- **Sección Stack del Inicio** (`StackEvidence` + `StackCategoryGrid`, `id="stack"`, destino de la redirección de `/tecnologias`): data-driven desde `data.jsx` — `stackCategories` (orden y `kind`: `tech` / `ai` / `concepts`), `stackEvidence` (`{ tech, category, usedIn }`; `usedIn: []` = solo nombre e ícono; `["all"]` = "Todos los proyectos"), `aiTools` (`{ key, usageKey }`, etiqueta de uso en vez de "Usado en") y `concepts` (`{ key, usedIn }`, sin ícono). Se muestra como **un solo `<Accordion alwaysOpen>` en todos los tamaños, con todas las categorías abiertas por defecto** (`defaultActiveKey` = todos los ids de `stackCategories`, así una categoría nueva también arranca abierta); cada una se cierra y abre por separado. Encabezado `Accordion.Header as="h3"` con "Título (cantidad)"; grilla 1 / 2 (`sm`) / 4 (`lg`) columnas. Colores del acordeón: `--bs-accordion-*` conectadas a tokens en `.accordion.stack-accordion` y flecha con `mask` + `-webkit-mask` (`App.css`). Teclado nativo: los encabezados son `<button>`.
 - **Textos compartidos entre páginas** → namespace `common.*` (hoy: `common.watch_video`, usado en Inicio y Proyectos).
 - **Agregar una página** (último caso: `/tecnologias` en 93d9c35): 1) `pages/<Nombre>.jsx`; 2) `import` + `<Route path=…>` en `App.jsx` **sin** `exact` (prop de v5, no hace nada en v7; las rutas actuales la arrastran); 3) una entrada `{ to, labelKey }` en `navItems` de `Menu.jsx`; 4) clave `menu.<x>` + namespace `<pagina>_page` en ambos locales. Contenedor raíz: `container py-4` (`Proyectos.jsx`, `Tecnologias.jsx`, `Contacto.jsx`).
 - ⚠ La skill personal `agregar-pagina` describe **otro repo** (Hotel Code: `Catalogo.jsx`, `RutasAdmin`, `helpers/queries`). No aplica acá: usá el checklist de arriba.

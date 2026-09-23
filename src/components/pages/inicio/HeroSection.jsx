@@ -18,7 +18,7 @@ const HeroSection = () => {
                 {t("home_page.hero.cta_projects")}
               </a>
               <a
-                href={t("menu.drive")}
+                href={t("menu.cv_url")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-lg btn-outline-neutral"

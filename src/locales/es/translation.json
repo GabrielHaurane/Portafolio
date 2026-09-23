@@ -1,9 +1,4 @@
 {
-  "greeting": "Hola 👋",
-  "name": "Soy Gabriel Alejandro Haurane, Desarrollador de software de Tucumán, Argentina.",
-  "description": "Comencé en programación a los 15 años con HTML y desde entonces fui perfeccionando mis habilidades a través de cursos, un bootcamp intensivo y experiencias profesionales que me permitieron trabajar con tecnologías como TypeScript, Next.js y Tailwind CSS, colaborando en equipos multiculturales y proyectos reales.",
-  "description2":"Actualmente cuento con más de 1 año de experiencia y conocimientos tanto en desarrollo web como en aplicaciones de escritorio, con especial interés en crear soluciones eficientes, escalables y orientadas a una buena experiencia de usuario.",
-  "projects_intro": "A continuación mi último proyecto. </>",
   "project1_title": "Hotel Code",
   "project1_features_title": "Características",
   "bool": "Estado",
@@ -58,14 +53,12 @@
   "button_live": "Ver Página",
   "title_projetcs": "Mis Proyectos",
   "project_tech_title": "Tecnologías",
-
   "menu": {
     "home": "Inicio",
     "projects": "Proyectos y Experiencia",
     "contact": "Contacto",
-    "technologies": "Tecnologías",
     "cv": "Ver CV",
-    "drive": "https://drive.google.com/file/d/1_2VAquom2EFTNW2qwjX0SS60f44UYhRq/view?usp=sharing",
+    "cv_url": "/cv/DEV_Gabriel_Haurane_CV_ES.pdf",
     "brand": "Gabriel Haurane",
     "toggle": "Abrir menú de navegación"
   },
@@ -122,10 +115,6 @@
     "to_light": "Cambiar a tema claro",
     "to_dark": "Cambiar a tema oscuro"
   },
-  "technologies_page": {
-    "title": "Tecnologías y herramientas",
-    "description": "Estas son las tecnologías, librerías y herramientas que conozco."
-  },
   "home_page": {
     "hero": {
       "eyebrow": "Desarrollador Frontend · Tucumán, Argentina",
@@ -154,7 +143,29 @@
       "subtitle": "Cada tecnología enlazada a dónde la usé.",
       "used_in": "Usado en:",
       "this_portfolio": "Este portafolio",
-      "see_all": "Ver todas las tecnologías"
+      "all_projects": "Todos los proyectos",
+      "categories": {
+        "frontend": "Frontend",
+        "desktop": "Escritorio",
+        "backend": "Backend",
+        "databases": "Bases de datos",
+        "tools": "Herramientas",
+        "ai": "Herramientas de IA",
+        "concepts": "Conceptos y prácticas"
+      },
+      "concepts": {
+        "crud": "CRUD",
+        "rbac": "Control de acceso por roles",
+        "soft_delete": "Baja lógica",
+        "responsive": "Responsive Design",
+        "i18n": "Internacionalización (i18n)",
+        "a11y": "Accesibilidad"
+      },
+      "ai": {
+        "claude": "Programación y revisión de código",
+        "gemini": "Generación de imágenes y recursos visuales",
+        "chatgpt": "Investigación y consultas técnicas"
+      }
     },
     "contact": {
       "title": "¿Hablamos?",

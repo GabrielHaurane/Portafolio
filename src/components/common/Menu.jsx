@@ -9,7 +9,6 @@ import { contactLinks } from "../../data/data.jsx";
 const navItems = [
   { to: "/", labelKey: "menu.home" },
   { to: "/proyectos", labelKey: "menu.projects" },
-  { to: "/tecnologias", labelKey: "menu.technologies" },
   { to: "/contacto", labelKey: "menu.contact" },
 ];
 
@@ -50,7 +49,7 @@ const Menu = () => {
 
           <div className="d-flex flex-wrap align-items-center gap-3 ms-lg-4 py-3 py-lg-0">
             <a
-              href={t("menu.drive")}
+              href={t("menu.cv_url")}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-sm btn-outline-violet"

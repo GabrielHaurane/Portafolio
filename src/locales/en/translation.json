@@ -1,20 +1,15 @@
 {
-  "greeting": "Hello 👋",
-  "name": "I am Gabriel Alejandro Haurane, software Developer from Tucumán, Argentina.",
-  "description": "I started programming at the age of 15 with HTML and since then I have been improving my skills through courses, an intensive bootcamp, and professional experiences that allowed me to work with technologies like TypeScript, Next.js, and Tailwind CSS, collaborating in multicultural teams and real projects.",
-  "description2": "I currently have over 1 year of experience and knowledge in both web development and desktop applications, with a special interest in creating efficient, scalable solutions focused on a good user experience.",
-  "projects_intro": "Here is my latest project  </>",
   "project1_title": "Hotel Code",
   "project1_features_title": "Features",
-  "bool":"State",
-  "status":"database being restructured",
+  "bool": "State",
+  "status": "database being restructured",
   "project1_features": [
     "Room Search: Filter rooms based on availability and other criteria.",
     "Bookings: Complete reservations by specifying check-in and check-out dates.",
     "User Management: Registration and login for customers.",
     "User-Friendly Interface: Attractive and responsive design for a great user experience.",
     "Success and Error Notifications: Visual feedback with SweetAlert2."
-  ], 
+  ],
   "project2_title": "Haurane Recipes",
   "project2_features_title": "Features",
   "project2_features": [
@@ -58,36 +53,34 @@
   "button_live": "Visit Website",
   "title_projetcs": "My Projects",
   "project_tech_title": "Technologies",
-
   "menu": {
     "home": "Home",
     "projects": "Projects and Experience",
     "contact": "Contact",
-    "technologies": "Technologies",
     "cv": "View CV",
-    "drive":"https://drive.google.com/file/d/1_2VAquom2EFTNW2qwjX0SS60f44UYhRq/view?usp=sharing",
+    "cv_url": "/cv/DEV_Gabriel_Haurane_CV_EN.pdf",
     "brand": "Gabriel Haurane",
     "toggle": "Open navigation menu"
   },
   "experience": {
-  "title": "Professional Experience",
-  "company": "SwaplyAr",
-  "duration": "Duration: 6 weeks",
-  "role": "Frontend Developer",
-  "technologies": "Technologies",
-  "description": [
-    "I worked as a developer on various tasks, such as creating a refund page that allowed users to request a refund or cancel a completed transaction.",
-    "I also worked on the request editing feature, where users could search for a transaction number and verify the submitted information. If there was incorrect data or a wrong receipt, they could report the issue and upload the correct file."
-  ]
-},
-"information": {
-  "title": "Contact Information",
-  "email": "Email",
-  "sendmail": "Send Email",
-  "phone": "Phone",
-  "sendWhatsApp": "Send WhatsApp",
-  "description": "If you wish to contact me, you can send me a message through the form below. I will be happy to respond as soon as possible."
-},
+    "title": "Professional Experience",
+    "company": "SwaplyAr",
+    "duration": "Duration: 6 weeks",
+    "role": "Frontend Developer",
+    "technologies": "Technologies",
+    "description": [
+      "I worked as a developer on various tasks, such as creating a refund page that allowed users to request a refund or cancel a completed transaction.",
+      "I also worked on the request editing feature, where users could search for a transaction number and verify the submitted information. If there was incorrect data or a wrong receipt, they could report the issue and upload the correct file."
+    ]
+  },
+  "information": {
+    "title": "Contact Information",
+    "email": "Email",
+    "sendmail": "Send Email",
+    "phone": "Phone",
+    "sendWhatsApp": "Send WhatsApp",
+    "description": "If you wish to contact me, you can send me a message through the form below. I will be happy to respond as soon as possible."
+  },
   "form": {
     "name": "Name",
     "email": "Email",
@@ -122,10 +115,6 @@
     "to_light": "Switch to light theme",
     "to_dark": "Switch to dark theme"
   },
-  "technologies_page": {
-    "title": "Technologies and tools",
-    "description": "These are the technologies, libraries, and tools I know."
-  },
   "home_page": {
     "hero": {
       "eyebrow": "Frontend Developer · Tucumán, Argentina",
@@ -154,7 +143,29 @@
       "subtitle": "Every technology linked to where I used it.",
       "used_in": "Used in:",
       "this_portfolio": "This portfolio",
-      "see_all": "See all technologies"
+      "all_projects": "All projects",
+      "categories": {
+        "frontend": "Frontend",
+        "desktop": "Desktop",
+        "backend": "Backend",
+        "databases": "Databases",
+        "tools": "Tools",
+        "ai": "AI tools",
+        "concepts": "Concepts and practices"
+      },
+      "concepts": {
+        "crud": "CRUD",
+        "rbac": "Role-based access control",
+        "soft_delete": "Soft delete",
+        "responsive": "Responsive Design",
+        "i18n": "Internationalization (i18n)",
+        "a11y": "Accessibility"
+      },
+      "ai": {
+        "claude": "Coding and code review",
+        "gemini": "Image and visual asset generation",
+        "chatgpt": "Research and technical queries"
+      }
     },
     "contact": {
       "title": "Let's talk",

@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { featuredProjects } from "../../../data/data.jsx";
 import FeaturedProjectCard from "./FeaturedProjectCard";
 
-// Los proyectos con highlight van primero, a todo el ancho; el resto en grilla.
-const highlightedProjects = featuredProjects.filter((project) => project.highlight);
-const gridProjects = featuredProjects.filter((project) => !project.highlight);
+// En el Home solo van los proyectos con featured: true (el resto vive en /proyectos).
+// Los que tienen highlight van primero, a todo el ancho; el resto en grilla.
+const homeProjects = featuredProjects.filter((project) => project.featured);
+const highlightedProjects = homeProjects.filter((project) => project.highlight);
+const gridProjects = homeProjects.filter((project) => !project.highlight);
 
 const FeaturedProjects = () => {
   const { t } = useTranslation();
@@ -20,13 +22,15 @@ const FeaturedProjects = () => {
             <FeaturedProjectCard project={project} wide />
           </div>
         ))}
-        <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
-          {gridProjects.map((project) => (
-            <div className="col" key={project.id}>
-              <FeaturedProjectCard project={project} />
-            </div>
-          ))}
-        </div>
+        {gridProjects.length > 0 && (
+          <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+            {gridProjects.map((project) => (
+              <div className="col" key={project.id}>
+                <FeaturedProjectCard project={project} />
+              </div>
+            ))}
+          </div>
+        )}
         <div className="text-center mt-5">
           <Link to="/proyectos" className="btn btn-outline-neutral">
             {t("home_page.featured.see_all")}
