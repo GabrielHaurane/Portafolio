@@ -30,7 +30,7 @@ const ContactSection = () => {
             </a>
           ))}
         </div>
-        <Link to="/contacto" className="btn btn-outline-light">
+        <Link to="/contacto" className="btn btn-outline-neutral">
           {t("home_page.contact.cta_form")}
           <i className="bi bi-arrow-right ms-1"></i>
         </Link>

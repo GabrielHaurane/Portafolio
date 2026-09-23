@@ -15,7 +15,7 @@ const ProjectCardTec = ({
   const { t } = useTranslation();
   return (
     <div
-      className="card text-white shadow flex-md-row flex-md-wrap flex-column h-50 mb-4"
+      className="card shadow flex-md-row flex-md-wrap flex-column h-50 mb-4"
       style={{
         backgroundColor: "var(--color-card)",
         borderRadius: "40px",
@@ -25,7 +25,7 @@ const ProjectCardTec = ({
       <div className="rounded-top-1 card-img-left d-flex justify-content-center align-items-center col-md-4 col-12 w-100">
         <LoadingImage
           src={img}
-          className="img-fluid w-100 h-100 rounded-top-5 border-top border-black"
+          className="img-fluid w-100 h-100 rounded-top-5 border-top"
           alt={title}
           style={{
             objectFit: "cover",
@@ -55,7 +55,7 @@ const ProjectCardTec = ({
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline-light "
+              className="btn btn-outline-neutral "
             >
               <i className="bi bi-github me-1"></i>
               {t("button_github")}

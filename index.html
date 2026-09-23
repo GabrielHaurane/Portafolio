@@ -1,10 +1,25 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="dark" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./src/components/assets/logoGH.png">
     <title>Gabriel Haurane - Portafolio</title>
+
+    <!-- Tema: se aplica antes del bundle para evitar el parpadeo.
+         Oscuro por defecto; solo cambia a claro si el visitante lo eligió (clave "theme"). -->
+    <script>
+      (function () {
+        var theme = "dark";
+        try {
+          if (window.localStorage.getItem("theme") === "light") theme = "light";
+        } catch (e) {
+          /* localStorage bloqueado: queda oscuro */
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.setAttribute("data-bs-theme", theme);
+      })();
+    </script>
     <meta name="description" content="Portafolio de Gabriel Haurane, desarrollador de software de Tucumán, Argentina. Proyectos web y de escritorio con React, JavaScript, TypeScript, Node.js y Python." />
     <link rel="canonical" href="https://gabrielhauraneportafolio.netlify.app/" />
 

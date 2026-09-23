@@ -28,7 +28,7 @@ const FeaturedProjects = () => {
           ))}
         </div>
         <div className="text-center mt-5">
-          <Link to="/proyectos" className="btn btn-outline-light">
+          <Link to="/proyectos" className="btn btn-outline-neutral">
             {t("home_page.featured.see_all")}
             <i className="bi bi-arrow-right ms-1"></i>
           </Link>

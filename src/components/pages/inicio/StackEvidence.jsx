@@ -17,7 +17,7 @@ const StackEvidence = () => {
               const { Icon, title } = techCatalog[item.tech];
               return (
                 <div className="col" key={item.tech}>
-                  <div className="content-card h-100 p-3 text-white">
+                  <div className="content-card h-100 p-3">
                     <div className="d-flex align-items-center gap-2 mb-2">
                       <span className="stack-icon">
                         <Icon size={24} aria-hidden="true" />
@@ -40,7 +40,7 @@ const StackEvidence = () => {
             })}
         </div>
         <div className="text-center mt-5">
-          <Link to="/tecnologias" className="btn btn-outline-light">
+          <Link to="/tecnologias" className="btn btn-outline-neutral">
             {t("home_page.stack.see_all")}
             <i className="bi bi-arrow-right ms-1"></i>
           </Link>

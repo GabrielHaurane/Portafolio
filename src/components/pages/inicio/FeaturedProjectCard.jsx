@@ -68,7 +68,7 @@ const FeaturedProjectCard = ({ project, wide = false }) => {
             href={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-sm btn-outline-light"
+            className="btn btn-sm btn-outline-neutral"
           >
             <i className="bi bi-github me-1"></i>
             {t("button_github")}
@@ -80,7 +80,7 @@ const FeaturedProjectCard = ({ project, wide = false }) => {
 
   if (wide) {
     return (
-      <article className="content-card text-white shadow">
+      <article className="content-card shadow">
         <div className="row g-0 align-items-center">
           <div className="col-lg-7">{media}</div>
           <div className="col-lg-5 align-self-stretch">{body}</div>
@@ -90,7 +90,7 @@ const FeaturedProjectCard = ({ project, wide = false }) => {
   }
 
   return (
-    <article className="content-card h-100 d-flex flex-column text-white shadow">
+    <article className="content-card h-100 d-flex flex-column shadow">
       {media}
       {body}
     </article>

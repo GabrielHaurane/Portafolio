@@ -37,7 +37,7 @@ src/
   components/
     LanguageSwitcher.jsx        ⚠ solo lo usa Menu → debería vivir en common/
     assets/                     fotoDePerfil.jpg, logoGH.png (favicon en index.html:6)
-    common/                     Menu (navbar sticky), Footer, LoadingImage, LoadingIframe
+    common/                     Menu (navbar sticky), Footer, ThemeToggle, LoadingImage, LoadingIframe
     pages/
       Home.jsx  Proyectos.jsx  Contacto.jsx  Tecnologias.jsx
       inicio/                   secciones del Home: HeroSection, FeaturedProjects(+Card),
@@ -80,12 +80,17 @@ Violaciones actuales (no moverlas sin pedido; aplicar la regla a código nuevo):
 | Formularios | `react-hook-form` (`register`, `handleSubmit`, `reset`) | `FormularioPosible.jsx:11-16` |
 | Idioma actual | `i18n.language` / `i18n.changeLanguage` vía `useTranslation` | `LanguageSwitcher.jsx:5-9` |
 | Página actual | la URL (`react-router`); `NavLink` para estado activo | `navItems` en `Menu.jsx` |
-| Estado compartido / persistencia | **No existe.** No agregar Context, store ni `localStorage` sin pedido explícito | — |
+| Tema claro/oscuro | atributos `data-theme` + `data-bs-theme` de `<html>`; `ThemeToggle` lee su estado inicial de ahí (sin Context ni store) | `ThemeToggle.jsx`, script inline de `index.html` |
+| Persistencia | `localStorage` **solo** para la clave `"theme"` (`"dark"`/`"light"`), siempre dentro de `try/catch`. Ningún otro dato se persiste | `ThemeToggle.jsx`, `index.html` |
+| Estado compartido | **No existe.** No agregar Context ni store sin pedido explícito | — |
 
 ## Estilos y tema
 
-- Bootstrap 5 (utilidades + grid) es la base; react-bootstrap se usa para `Navbar`, `Nav`, `Container`, `Button`, `Modal`. La navbar es `<Navbar expand="lg" sticky="top" collapseOnSelect>`: el colapso móvil lo maneja react-bootstrap, así que **no** se importa `bootstrap.bundle` ni se usan atributos `data-bs-*`.
-- Un solo tema oscuro violeta, sin modo claro. Tokens en `App.css:1-11`.
+- Bootstrap 5 (utilidades + grid) es la base; react-bootstrap se usa para `Navbar`, `Nav`, `Container`, `Button`, `Modal`. La navbar es `<Navbar expand="lg" sticky="top" collapseOnSelect>`: el colapso móvil lo maneja react-bootstrap, así que **no** se importa `bootstrap.bundle` ni se usan atributos `data-bs-*` en componentes (el único `data-bs-theme` vive en `<html>`).
+- **Dos temas (Fase 3.5): oscuro por defecto, claro opcional.** Tokens oscuros en `:root` y claros en `[data-theme="light"]` de `App.css`. El tema vive en `<html data-theme data-bs-theme>`: `index.html` trae `dark` fijo y un script inline (antes del bundle) lo cambia a `light` solo si `localStorage.theme === "light"` — nunca se mira `prefers-color-scheme`. `ThemeToggle` (en la navbar, dentro del `Navbar.Collapse`) cambia ambos atributos y guarda la elección.
+- `html[data-bs-theme]` en `App.css` conecta `--bs-body-bg/-color`, `--bs-border-color` y `--bs-secondary-color` a los tokens: inputs, `Modal`, `.card` y `.border` siguen el tema solos.
+- Nunca `text-white`, `btn-outline-light` ni `color: white`: texto → hereda `var(--color-text)`; botón secundario → `btn-outline-neutral`; link-botón → `btn-link-neutral`; íconos de la navbar → `nav-icon-link`.
+- Transición de colores de 200 ms (background-color, color, border-color) en body, navbar, footer, main, tarjetas y modal; desactivada con `prefers-reduced-motion`.
 - Íconos: UI → `bootstrap-icons` (`<i className="bi bi-…">`); logos de tecnologías → `react-icons/si` (o `fa`) con `size={30}` en `data.jsx`.
 - Detalle y deuda (inline styles, hex sueltos): `.claude/rules/estilos.md`.
 
@@ -128,7 +133,7 @@ No hay tests ni CI (`.github/` no existe), ni hooks de git activos. Verificació
 | 2 | 0 errores nuevos de lint en `src/` (base: 0) | `npx eslint src` |
 | 3 | Claves i18n con paridad es/en | agente `verificador` |
 | 4 | Sin texto visible hardcodeado nuevo | revisar diff: strings fuera de `t()` en JSX |
-| 5 | Sin hex/rgb nuevos; solo `var(--color-*)` | `git diff \| grep -E "#[0-9a-fA-F]{3,6}\|rgb"` |
+| 5 | Sin hex/rgb nuevos; solo `var(--color-*)`; todo token nuevo en los dos temas; nada de `text-white` / `btn-outline-light` | `git diff \| grep -E "#[0-9a-fA-F]{3,6}\|rgb"` |
 | 6 | Sin `style={{…}}` nuevo si existe o puede existir una clase | revisar diff |
 | 7 | Ruta nueva: `App.jsx` + entrada en `navItems` de `Menu.jsx` | leer ambos |
 | 8 | No tocar `dist/`, `.vite/`, `Form.jsx`, `ProjectCard.jsx` | `git status` |

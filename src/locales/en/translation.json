@@ -118,6 +118,10 @@
     "github_profile": "Gabriel Haurane's GitHub profile",
     "linkedin_profile": "Gabriel Haurane's LinkedIn profile"
   },
+  "theme": {
+    "to_light": "Switch to light theme",
+    "to_dark": "Switch to dark theme"
+  },
   "technologies_page": {
     "title": "Technologies and tools",
     "description": "These are the technologies, libraries, and tools I know."

@@ -14,7 +14,7 @@ const ExperienceSection = () => {
           {experiences.map((experience) => {
             const company = t(experience.companyKey);
             return (
-              <article key={experience.id} className="content-card text-white shadow">
+              <article key={experience.id} className="content-card shadow">
                 <div className="row g-0">
                   <div className="col-lg-5">
                     <LoadingImage

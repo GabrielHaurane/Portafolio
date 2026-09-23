@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import LanguageSwitcher from "../LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
 import { contactLinks } from "../../data/data.jsx";
 
 // Para agregar una página: sumar su ruta en App.jsx y una entrada acá.
@@ -21,11 +22,10 @@ const Menu = () => {
       expand="lg"
       sticky="top"
       collapseOnSelect
-      data-bs-theme="dark"
       className="site-navbar"
     >
       <Container>
-        <Navbar.Brand as={Link} to="/" className="fw-bold text-white">
+        <Navbar.Brand as={Link} to="/" className="fw-bold">
           {t("menu.brand")}
         </Navbar.Brand>
 
@@ -42,7 +42,6 @@ const Menu = () => {
                 to={item.to}
                 end={item.to === "/"}
                 eventKey={item.to}
-                className="text-white"
               >
                 {t(item.labelKey)}
               </Nav.Link>
@@ -60,11 +59,12 @@ const Menu = () => {
               {t("menu.cv")}
             </a>
             <LanguageSwitcher />
+            <ThemeToggle />
             <a
               href={contactLinks.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="fs-5 text-white"
+              className="fs-5 nav-icon-link"
               aria-label={t("a11y.github_profile")}
             >
               <i className="bi bi-github"></i>
@@ -73,7 +73,7 @@ const Menu = () => {
               href={contactLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="fs-5 text-white"
+              className="fs-5 nav-icon-link"
               aria-label={t("a11y.linkedin_profile")}
             >
               <i className="bi bi-linkedin"></i>

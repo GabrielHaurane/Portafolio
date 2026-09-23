@@ -21,12 +21,12 @@ const HeroSection = () => {
                 href={t("menu.drive")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-lg btn-outline-light"
+                className="btn btn-lg btn-outline-neutral"
               >
                 <i className="bi bi-file-earmark-pdf me-1"></i>
                 {t("menu.cv")}
               </a>
-              <a href="#contacto" className="btn btn-lg btn-link text-white">
+              <a href="#contacto" className="btn btn-lg btn-link-neutral">
                 {t("home_page.hero.cta_contact")}
                 <i className="bi bi-arrow-down ms-1"></i>
               </a>

@@ -24,7 +24,7 @@ const ProjectCardApp = ({
     });
 
   return (
-    <div className="card text-white shadow mb-4" style={{ backgroundColor: "var(--color-card)", borderRadius: "40px" }}>
+    <div className="card shadow mb-4" style={{ backgroundColor: "var(--color-card)", borderRadius: "40px" }}>
       <LoadingIframe
         src={videoSrc}
         title={title}
@@ -47,7 +47,7 @@ const ProjectCardApp = ({
         <h4>{t("project_tech_title")}:</h4>
         {techItems ? <AppTechnologyIcons items={techItems} /> : <AppTechnologyIcons />}
         <div className="mt-3 d-flex flex-wrap gap-2 justify-content-center">
-          <a href={githubLink} target="_blank" rel="noopener noreferrer" className="btn btn-outline-light">
+          <a href={githubLink} target="_blank" rel="noopener noreferrer" className="btn btn-outline-neutral">
             <i className="bi bi-github me-1"></i>
             {t("button_github")}
           </a>

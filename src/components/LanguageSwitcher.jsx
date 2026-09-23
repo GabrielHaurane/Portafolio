@@ -10,10 +10,10 @@ function LanguageSwitcher() {
   };
 
   return (
-    <button className="btn btn-sm btn-outline-light" onClick={cambiarIdioma}>
+    <button className="btn btn-sm btn-outline-neutral" onClick={cambiarIdioma}>
       {i18n.language === 'es' ? 'ENGLISH' : 'ESPAÑOL'}
     </button>
   );
 }
 
-export default LanguageSwitcher;
+export default LanguageSwitcher;

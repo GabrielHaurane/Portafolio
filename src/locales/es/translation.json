@@ -118,6 +118,10 @@
     "github_profile": "Perfil de GitHub de Gabriel Haurane",
     "linkedin_profile": "Perfil de LinkedIn de Gabriel Haurane"
   },
+  "theme": {
+    "to_light": "Cambiar a tema claro",
+    "to_dark": "Cambiar a tema oscuro"
+  },
   "technologies_page": {
     "title": "Tecnologías y herramientas",
     "description": "Estas son las tecnologías, librerías y herramientas que conozco."

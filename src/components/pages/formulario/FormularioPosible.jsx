@@ -120,7 +120,7 @@ const FormularioPosible = () => {
       </form>
 
       <Modal show={showModal && modalType === "success"} onHide={handleCloseModal} centered>
-        <Modal.Header closeButton style={{ backgroundColor: "var(--color-success)", color: "white" }}>
+        <Modal.Header closeButton closeVariant="white" className="modal-header-success">
           <Modal.Title>✅ {t("form.success")}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -134,7 +134,7 @@ const FormularioPosible = () => {
       </Modal>
 
       <Modal show={showModal && modalType === "error"} onHide={handleCloseModal} centered>
-        <Modal.Header closeButton style={{ backgroundColor: "var(--color-error)", color: "white" }}>
+        <Modal.Header closeButton closeVariant="white" className="modal-header-error">
           <Modal.Title>❌ {t("form.error")}</Modal.Title>
         </Modal.Header>
         <Modal.Body>

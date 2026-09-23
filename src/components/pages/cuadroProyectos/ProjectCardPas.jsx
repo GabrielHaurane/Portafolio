@@ -6,7 +6,7 @@ const ProjectCardPas = ({ img, title, featuresTitle, features, githubLink, liveL
      const { t } = useTranslation();
         return (
              <div
-          className="card text-white shadow flex-md-row flex-md-wrap flex-column h-50 mb-4"
+          className="card shadow flex-md-row flex-md-wrap flex-column h-50 mb-4"
           style={{
             backgroundColor: "var(--color-card)",
             borderRadius: '40px'
@@ -40,7 +40,7 @@ const ProjectCardPas = ({ img, title, featuresTitle, features, githubLink, liveL
                   href={githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-outline-light "
+                  className="btn btn-outline-neutral "
                 >
                   <i className="bi bi-github me-1"></i>
                   {t("button_github")}

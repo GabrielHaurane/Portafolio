@@ -1,13 +1,67 @@
+/* ---------- Tokens de color (Fase 3.5: dos temas) ----------
+   Oscuro es el tema por defecto (:root). El claro se activa con
+   <html data-theme="light">, que aplica el script inline de index.html
+   o el ThemeToggle. Todo color nuevo va acá, en los dos bloques. */
+
 :root {
-  --color-background: #3b1b50;
-  --color-surface: #2b0c3e;
-  --color-surface-soft: #501972;
-  --color-card: #1e082c;
-  --color-form: #5a297a;
-  --color-accent: #ae69e3;
-  --color-accent-ink: #1e082c;
+  color-scheme: dark; /* scrollbars, autocompletado y controles nativos en oscuro */
+  --color-background: #0e0e0f;
+  --color-surface: #161617;
+  --color-card: #1c1c1e;
+  --color-form: #1c1c1e;
+  --color-accent: #c9a54a;
+  --color-accent-ink: #0e0e0f;
+  --color-text: #ece8e1;
+  --color-text-muted: #9d978c;
+  --color-border: rgba(201, 165, 74, 0.22);
   --color-success: #146c43;
   --color-error: #b02a37;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --color-background: #f6f3ee;
+  --color-surface: #ffffff;
+  --color-card: #ffffff;
+  --color-form: #ffffff;
+  --color-accent: #a8472a;
+  --color-accent-ink: #ffffff;
+  --color-text: #1c1b19;
+  --color-text-muted: #5d5a54;
+  --color-border: #e4dfd6;
+  --color-success: #146c43;
+  --color-error: #b02a37;
+}
+
+/* Bootstrap lee sus propias variables (--bs-*). Las conectamos a nuestros tokens
+   para que inputs, Modal, .card y .border sigan el tema. `html[data-bs-theme]`
+   pesa más que el `[data-bs-theme=…]` de Bootstrap, que se carga después. */
+html[data-bs-theme] {
+  --bs-body-bg: var(--color-background);
+  --bs-body-color: var(--color-text);
+  --bs-emphasis-color: var(--color-text);
+  --bs-secondary-color: var(--color-text-muted);
+  --bs-border-color: var(--color-border);
+  --bs-link-color: var(--color-accent);
+  --bs-link-hover-color: color-mix(in srgb, var(--color-accent) 75%, var(--color-text));
+}
+
+/* Bootstrap 5.3 pinta los <a> con --bs-link-color-rgb (un triplete que no se puede
+   derivar de un token), así que los links "planos" (sin clase) usan las variables de
+   arriba. Los que tienen clase (.btn, .nav-link, .nav-icon-link…) no se tocan. */
+a:not([class]) {
+  color: var(--bs-link-color);
+}
+
+a:not([class]):hover {
+  color: var(--bs-link-hover-color);
+}
+
+/* Foco de inputs con el acento en vez del azul de Bootstrap
+   (html[data-bs-theme] para ganarle a .form-control:focus, que se carga después) */
+html[data-bs-theme] .form-control:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--color-accent) 25%, transparent);
 }
 
 html {
@@ -19,6 +73,37 @@ html {
     scroll-behavior: auto;
   }
 }
+
+/* ---------- Transición al cambiar de tema ---------- */
+
+body,
+.site-navbar,
+.site-footer,
+.mainColor,
+.home-section-alt,
+.content-card,
+.card,
+.modal-content {
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .site-navbar,
+  .site-footer,
+  .mainColor,
+  .home-section-alt,
+  .content-card,
+  .card,
+  .modal-content {
+    transition: none;
+  }
+}
+
+/* ---------- Carga de imágenes / iframes ---------- */
 
 .media-frame {
   position: relative;
@@ -46,7 +131,12 @@ html {
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(90deg, #2b0c3e 25%, #501972 50%, #2b0c3e 75%);
+  background: linear-gradient(
+    90deg,
+    var(--color-surface) 25%,
+    color-mix(in srgb, var(--color-text) 10%, var(--color-surface)) 50%,
+    var(--color-surface) 75%
+  );
   background-size: 200% 100%;
   animation: media-skeleton-shimmer 1.4s ease-in-out infinite;
 }
@@ -64,9 +154,11 @@ html {
 
 .mainColor{
   background-color: var(--color-background);
-  color: white;
+  color: var(--color-text);
   min-height: 100%;
 }
+
+/* ---------- Botones ---------- */
 
 .btn.btn-outline-violet {
   color: var(--color-accent);
@@ -81,7 +173,7 @@ html {
 }
 
 .btn.btn-outline-violet:focus {
-  box-shadow: 0 0 0 0.25rem rgba(174, 105, 227, 0.5);
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--color-accent) 50%, transparent);
   color: var(--color-accent-ink);
   background-color: var(--color-accent);
   border-color: var(--color-accent);
@@ -92,6 +184,38 @@ html {
   background-color: transparent;
   opacity: 0.65;
 }
+
+/* Reemplaza a btn-outline-light: botón secundario que sigue el color de texto del tema */
+.btn.btn-outline-neutral {
+  color: var(--color-text);
+  border: 1px solid var(--color-text);
+  background-color: transparent;
+}
+
+.btn.btn-outline-neutral:hover,
+.btn.btn-outline-neutral:active {
+  color: var(--color-background);
+  background-color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.btn.btn-outline-neutral:focus-visible {
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--color-text) 35%, transparent);
+}
+
+/* Reemplaza a btn-link + text-white */
+.btn.btn-link-neutral {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.btn.btn-link-neutral:hover,
+.btn.btn-link-neutral:focus-visible {
+  color: var(--color-accent);
+}
+
+/* ---------- Navbar ---------- */
+
 .nav-link {
   position: relative;           /* para que ::after se posicione respecto al texto */
   text-decoration: none;        /* quitamos subrayado normal */
@@ -105,7 +229,7 @@ html {
   bottom: 0;                    /* justo debajo del texto */
   height: 2px;                  /* grosor de la línea */
   width: 0;                      /* empieza escondido */
-  background-color: #fff;       /* color de la línea */
+  background-color: var(--color-accent); /* color de la línea */
   transition: width 0.3s ease;  /* animación de deslizamiento */
 }
 
@@ -117,7 +241,27 @@ html {
 
 .site-navbar {
   background-color: var(--color-surface);
-  border-bottom: 1px solid var(--color-surface-soft);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Doble clase para ganarle a .navbar de Bootstrap, que se carga después */
+.navbar.site-navbar {
+  --bs-navbar-color: var(--color-text);
+  --bs-navbar-hover-color: var(--color-accent);
+  --bs-navbar-active-color: var(--color-text);
+  --bs-navbar-brand-color: var(--color-text);
+  --bs-navbar-brand-hover-color: var(--color-text);
+  --bs-navbar-toggler-border-color: var(--color-border);
+}
+
+/* Íconos de GitHub / LinkedIn en la navbar */
+.nav-icon-link {
+  color: var(--color-text);
+}
+
+.nav-icon-link:hover,
+.nav-icon-link:focus-visible {
+  color: var(--color-accent);
 }
 
 /* En desktop el subrayado activo acompaña el ancho del texto, no del padding */
@@ -135,6 +279,29 @@ html {
   .site-navbar .nav-link {
     align-self: flex-start;
   }
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---------- Modales del formulario ---------- */
+
+.modal-header-success,
+.modal-header-error {
+  color: var(--bs-white); /* el fondo de estado es oscuro en los dos temas */
+}
+
+.modal-header-success {
+  background-color: var(--color-success);
+}
+
+.modal-header-error {
+  background-color: var(--color-error);
 }
 
 /* ---------- Secciones del Home ---------- */
@@ -188,8 +355,11 @@ html {
   object-fit: cover;
 }
 
+/* El borde separa la tarjeta del fondo en claro (tarjeta y sección alterna son blancas) */
 .content-card {
   background-color: var(--color-card);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
   border-radius: 1.5rem;
   overflow: hidden;
 }
