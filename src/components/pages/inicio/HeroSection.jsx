@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <section className="home-section hero-section">
       <div className="container">
-        <div className="row align-items-center g-5">
+        <div className="row align-items-center g-4 g-lg-5">
           <div className="col-lg-8 order-2 order-lg-1">
             <p className="hero-eyebrow mb-3">{t("home_page.hero.eyebrow")}</p>
             <h1 className="hero-title fw-bold mb-3">{t("home_page.hero.title")}</h1>
