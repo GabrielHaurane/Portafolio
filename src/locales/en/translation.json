@@ -117,9 +117,9 @@
   },
   "home_page": {
     "hero": {
-      "eyebrow": "Frontend Developer · Tucumán, Argentina",
-      "title": "Frontend Developer with real product experience: I built features for a fintech (SwaplyAr) with Next.js and TypeScript.",
-      "subtitle": "I've also built complete web apps with React and Bootstrap, deployed and open source on GitHub.",
+      "eyebrow": "Software Developer · Tucumán, Argentina",
+      "title": "I build web apps with React and TypeScript, and desktop management systems with C# and .NET.",
+      "subtitle": "I built features for a real fintech (SwaplyAr), an inventory system with user roles, and live web apps, all with their source code on GitHub.",
       "cta_projects": "See projects",
       "cta_contact": "Contact me"
     },
@@ -169,7 +169,7 @@
     },
     "contact": {
       "title": "Let's talk",
-      "text": "I'm looking for my next frontend developer role. Reach out through whichever channel you prefer.",
+      "text": "I'm looking for my next software developer role. Reach out through whichever channel you prefer.",
       "email": "Email",
       "whatsapp": "WhatsApp",
       "linkedin": "LinkedIn",

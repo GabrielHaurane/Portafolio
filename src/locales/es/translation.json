@@ -117,9 +117,9 @@
   },
   "home_page": {
     "hero": {
-      "eyebrow": "Desarrollador Frontend · Tucumán, Argentina",
-      "title": "Desarrollador Frontend con experiencia en producto real: construí funcionalidades para una fintech (SwaplyAr) con Next.js y TypeScript.",
-      "subtitle": "Además, desarrollé aplicaciones web completas con React y Bootstrap, publicadas y con el código abierto en GitHub.",
+      "eyebrow": "Desarrollador de software · Tucumán, Argentina",
+      "title": "Desarrollo aplicaciones web con React y TypeScript, y sistemas de gestión de escritorio con C# y .NET.",
+      "subtitle": "Construí funcionalidades para una fintech real (SwaplyAr), un sistema de inventario con roles de usuario y aplicaciones web publicadas, todas con su código en GitHub.",
       "cta_projects": "Ver proyectos",
       "cta_contact": "Contactarme"
     },
@@ -169,7 +169,7 @@
     },
     "contact": {
       "title": "¿Hablamos?",
-      "text": "Estoy buscando mi próximo rol como desarrollador frontend. Escribime por el canal que prefieras.",
+      "text": "Estoy buscando mi próximo rol como desarrollador de software. Escribime por el canal que prefieras.",
       "email": "Correo",
       "whatsapp": "WhatsApp",
       "linkedin": "LinkedIn",
