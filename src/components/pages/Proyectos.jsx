@@ -41,7 +41,7 @@ const Proyectos = () => {
               <ProjectCardTec
                 img={hotelCodeImg}
                 title={t("project1_title")}
-                bool={t("bool")}
+                
                 featuresTitle={t("project1_features_title")}
                 features={t("project1_features", { returnObjects: true })}
                 technologiesTitle={t("technologiesTitle")}
