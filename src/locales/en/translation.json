@@ -2,7 +2,7 @@
   "project1_title": "Hotel Code",
   "project1_features_title": "Features",
   "bool": "State",
-  "status": "database being restructured",
+  "status": "live in production",
   "project1_features": [
     "Room Search: Filter rooms based on availability and other criteria.",
     "Bookings: Complete reservations by specifying check-in and check-out dates.",
@@ -10,7 +10,7 @@
     "User-Friendly Interface: Attractive and responsive design for a great user experience.",
     "Success and Error Notifications: Visual feedback with SweetAlert2."
   ],
-  "project2_title": "Haurane Recipes",
+  "project2_title": "GH Recetas",
   "project2_features_title": "Features",
   "project2_features": [
     "Recipe Exploration: List of recipes with images and descriptions.",

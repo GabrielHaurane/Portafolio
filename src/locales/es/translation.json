@@ -2,7 +2,7 @@
   "project1_title": "Hotel Code",
   "project1_features_title": "Características",
   "bool": "Estado",
-  "status": "base de datos en reestructuración",
+  "status": "en producción",
   "project1_features": [
     "Búsqueda de habitaciones: Filtra habitaciones según disponibilidad y otros criterios.",
     "Reservas: Completa reservas especificando fechas de entrada y salida.",
@@ -10,7 +10,7 @@
     "Interfaz Amigable: Diseño atractivo y responsivo para una excelente experiencia de usuario.",
     "Notificaciones de éxito y error: Feedback visual con SweetAlert2."
   ],
-  "project2_title": "Recetas Haurane",
+  "project2_title": "GH Recetas",
   "project2_features_title": "Características",
   "project2_features": [
     "Exploración de recetas: Lista de recetas con imágenes y descripciones.",
