@@ -9,6 +9,7 @@ import { featuredProjects } from "../../data/data.jsx";
 
 const inventoryApp = featuredProjects.find((project) => project.id === "inventory_app");
 const ghApp = featuredProjects.find((project) => project.id === "gh_app");
+const vanguardInventory = featuredProjects.find((project) => project.id === "vanguard_inventory");
 
 const Proyectos = () => {
   const { t } = useTranslation();
@@ -40,6 +41,17 @@ const Proyectos = () => {
                 videoSrc={ghApp.embedSrc}
                 videoLink={ghApp.videoLink}
                 githubLink={ghApp.githubLink}
+              />
+              <ProjectCardTec
+                img={vanguardInventory.img}
+                title={t(vanguardInventory.titleKey)}
+                bool={t("bool")}
+                statusItem={t("vanguard_inventory.status")}
+                featuresTitle={t("vanguard_inventory.features_title")}
+                features={t("vanguard_inventory.features", { returnObjects: true })}
+                technologiesTitle={t("technologiesTitle")}
+                technologies={vanguardInventory.technologies}
+                liveLink={vanguardInventory.liveLink}
               />
               <ProjectCardTec
                 img={hotelCodeImg}

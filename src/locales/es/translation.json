@@ -29,6 +29,20 @@
       "Actualmente cuenta con los niveles 1 y 2 para comenzar."
     ]
   },
+  "vanguard_inventory": {
+    "title": "Vanguard Inventory",
+    "summary": "Aplicación web de control de stock, ventas y compras para distribuidores mayoristas, con una interfaz distinta para cada rol.",
+    "features_title": "Características",
+    "features": [
+      "Tres roles con pantallas propias: Admin (inventario, clientes e historiales), Vendedor (nueva venta y catálogo) y Depósito (ajuste de stock y compras a proveedores).",
+      "Stock sin sobreventa: cada pedido reserva stock dentro de una transacción ACID.",
+      "Auditoría completa: todo movimiento queda registrado con saldo anterior y posterior.",
+      "Ventas con subtotales en tiempo real, alertas de stock crítico y bajas lógicas con reactivación.",
+      "Demo pública con acceso rápido por rol: los datos vuelven a su estado inicial cada 30 minutos.",
+      "Tema claro/oscuro y tablas responsive (tarjetas en móvil)."
+    ],
+    "status": "en producción (demo pública)"
+  },
   "inventory_app": {
     "title": "GH Sistema de Control de Inventario",
     "version": "v1.0",

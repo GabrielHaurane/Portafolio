@@ -1,9 +1,10 @@
-import { SiReact, SiTailwindcss, SiBootstrap, SiMongodb, SiNodedotjs, SiTypescript, SiNextdotjs, SiVite, SiJavascript, SiPython, SiMysql, SiDotnet, SiSharp, SiGit, SiGithub, SiPostman, SiNetlify, SiFigma, SiClaude, SiGooglegemini, SiOpenai } from "react-icons/si";
+import { SiReact, SiTailwindcss, SiBootstrap, SiMongodb, SiNodedotjs, SiTypescript, SiNextdotjs, SiVite, SiJavascript, SiPython, SiMysql, SiDotnet, SiSharp, SiGit, SiGithub, SiPostman, SiNetlify, SiFigma, SiClaude, SiGooglegemini, SiOpenai, SiPrisma, SiPostgresql } from "react-icons/si";
 import { FaHtml5, FaCss3 } from 'react-icons/fa';
 import ghProgrammingAppImg from "../img/ghProgrammingApp.png";
 import hotelCodeImg from "../img/hotelCode.png";
 import recetasHauraneImg from "../img/recetasHaurane.png";
 import swaplyImg from "../img/swaply.png";
+import vanguardInventoryImg from "../img/vanguardInventory.png";
 
 export const proIcons = [
   { icon: <FaHtml5 size={30} />, title: "HTML" },
@@ -55,6 +56,8 @@ export const techCatalog = {
   csharp: { Icon: SiSharp, title: "C#" },
   dotnet: { Icon: SiDotnet, title: ".NET" },
   mysql: { Icon: SiMysql, title: "MySQL" },
+  postgresql: { Icon: SiPostgresql, title: "PostgreSQL" },
+  prisma: { Icon: SiPrisma, title: "Prisma" },
   git: { Icon: SiGit, title: "Git" },
   github: { Icon: SiGithub, title: "GitHub" },
   postman: { Icon: SiPostman, title: "Postman" },
@@ -112,6 +115,14 @@ export const featuredProjects = [
     videoLink: "https://youtu.be/l9rQlnTijqQ",
     embedSrc: "https://www.youtube-nocookie.com/embed/l9rQlnTijqQ",
     githubLink: "https://github.com/GabrielHaurane/GHProgramingApp",
+  },
+  {
+    id: "vanguard_inventory",
+    titleKey: "vanguard_inventory.title",
+    summaryKey: "vanguard_inventory.summary",
+    img: vanguardInventoryImg,
+    technologies: ["nextjs", "react", "typescript", "tailwind", "prisma", "postgresql"],
+    liveLink: "https://vanguard-inventory-demo.netlify.app/",
   },
   {
     id: "hotel_code",
@@ -183,21 +194,23 @@ export const stackCategories = [
 export const stackEvidence = [
   { tech: "html_css", category: "frontend", usedIn: ["hotel_code", "recetas", "portfolio"] },
   { tech: "javascript", category: "frontend", usedIn: ["hotel_code", "recetas", "portfolio"] },
-  { tech: "typescript", category: "frontend", usedIn: ["swaplyar"] },
-  { tech: "react", category: "frontend", usedIn: ["swaplyar", "hotel_code", "recetas", "portfolio"] },
-  { tech: "nextjs", category: "frontend", usedIn: ["swaplyar"] },
+  { tech: "typescript", category: "frontend", usedIn: ["swaplyar", "vanguard_inventory"] },
+  { tech: "react", category: "frontend", usedIn: ["swaplyar", "vanguard_inventory", "hotel_code", "recetas", "portfolio"] },
+  { tech: "nextjs", category: "frontend", usedIn: ["swaplyar", "vanguard_inventory"] },
   { tech: "bootstrap", category: "frontend", usedIn: ["hotel_code", "recetas", "portfolio"] },
-  { tech: "tailwind", category: "frontend", usedIn: ["swaplyar"] },
+  { tech: "tailwind", category: "frontend", usedIn: ["swaplyar", "vanguard_inventory"] },
   { tech: "csharp_dotnet_winforms", category: "desktop", usedIn: ["inventory_app"] },
   { tech: "python_tkinter", category: "desktop", usedIn: ["gh_app"] },
   { tech: "node", category: "backend", usedIn: [] },
+  { tech: "prisma", category: "backend", usedIn: ["vanguard_inventory"] },
   { tech: "mysql", category: "databases", usedIn: ["inventory_app"] },
+  { tech: "postgresql", category: "databases", usedIn: ["vanguard_inventory"] },
   { tech: "mongodb", category: "databases", usedIn: [] },
   { tech: "vite", category: "tools", usedIn: ["hotel_code", "recetas", "portfolio"] },
   { tech: "git", category: "tools", usedIn: ["all"] },
   { tech: "github", category: "tools", usedIn: ["all"] },
   { tech: "postman", category: "tools", usedIn: [] },
-  { tech: "netlify", category: "tools", usedIn: ["hotel_code", "recetas", "portfolio"] },
+  { tech: "netlify", category: "tools", usedIn: ["vanguard_inventory", "hotel_code", "recetas", "portfolio"] },
   { tech: "figma", category: "tools", usedIn: [] },
 ];
 
@@ -211,10 +224,10 @@ export const aiTools = [
 
 // Conceptos y prácticas: sin ícono. El nombre sale de home_page.stack.concepts.<key>.
 export const concepts = [
-  { key: "crud", usedIn: ["inventory_app", "hotel_code"] },
-  { key: "rbac", usedIn: ["inventory_app"] },
-  { key: "soft_delete", usedIn: ["inventory_app"] },
-  { key: "responsive", usedIn: ["hotel_code", "recetas", "portfolio"] },
+  { key: "crud", usedIn: ["inventory_app", "vanguard_inventory", "hotel_code"] },
+  { key: "rbac", usedIn: ["inventory_app", "vanguard_inventory"] },
+  { key: "soft_delete", usedIn: ["inventory_app", "vanguard_inventory"] },
+  { key: "responsive", usedIn: ["vanguard_inventory", "hotel_code", "recetas", "portfolio"] },
   { key: "i18n", usedIn: ["portfolio"] },
   { key: "a11y", usedIn: ["portfolio"] },
 ];

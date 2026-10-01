@@ -29,6 +29,20 @@
       "It currently includes levels 1 and 2 to get started."
     ]
   },
+  "vanguard_inventory": {
+    "title": "Vanguard Inventory",
+    "summary": "Web app for stock, sales and purchase control for wholesale distributors, with a different interface for each role.",
+    "features_title": "Features",
+    "features": [
+      "Three roles with their own screens: Admin (inventory, customers and history), Seller (new sale and catalog) and Warehouse (stock adjustments and supplier purchases).",
+      "No overselling: each order reserves stock inside an ACID transaction.",
+      "Full audit trail: every movement is recorded with its balance before and after.",
+      "Sales with real-time subtotals, critical-stock alerts and soft delete with reactivation.",
+      "Public demo with one-click access per role: data resets to its initial state every 30 minutes.",
+      "Light/dark theme and responsive tables (cards on mobile)."
+    ],
+    "status": "in production (public demo)"
+  },
   "inventory_app": {
     "title": "GH Inventory Control System",
     "version": "v1.0",

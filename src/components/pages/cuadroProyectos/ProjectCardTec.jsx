@@ -1,6 +1,10 @@
 import { useTranslation } from "react-i18next";
 import TecIcons from "../tecnologias/TecIcons";
+import AppTechnologyIcons from "../tecnologias/AppTechnologyIcons";
 import LoadingImage from "../../common/LoadingImage";
+import { techCatalog } from "../../../data/data.jsx";
+
+// technologies: claves de techCatalog (opcional; sin ella, el stack fijo de proIcons).
 const ProjectCardTec = ({
   img,
   title,
@@ -11,8 +15,15 @@ const ProjectCardTec = ({
   githubLink,
   liveLink,
   technologiesTitle,
+  technologies,
 }) => {
   const { t } = useTranslation();
+  const techItems = technologies
+    ?.filter((key) => techCatalog[key])
+    .map((key) => {
+      const { Icon, title: techTitle } = techCatalog[key];
+      return { icon: <Icon size={30} />, title: techTitle };
+    });
   return (
     <div
       className="card shadow flex-md-row flex-md-wrap flex-column h-50 mb-4"
@@ -47,7 +58,7 @@ const ProjectCardTec = ({
         </ul>
         {technologiesTitle && <h4>{t("project_tech_title")}:</h4>}
         <div className="w-100">
-          <TecIcons />
+          {techItems ? <AppTechnologyIcons items={techItems} /> : <TecIcons />}
         </div>
         <div className="mt-3 d-flex gap-2 d-flex justify-content-center">
           {githubLink && (
