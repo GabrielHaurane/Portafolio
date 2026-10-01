@@ -109,7 +109,8 @@ export const featuredProjects = [
     highlight: true,
     img: ghProgrammingAppImg,
     technologies: ["python", "tkinter"],
-    videoLink: "https://www.loom.com/share/ea776b1232bc45fc9f535fce52f77298",
+    videoLink: "https://youtu.be/l9rQlnTijqQ",
+    embedSrc: "https://www.youtube-nocookie.com/embed/l9rQlnTijqQ",
     githubLink: "https://github.com/GabrielHaurane/GHProgramingApp",
   },
   {

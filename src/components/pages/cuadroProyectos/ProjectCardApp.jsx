@@ -3,7 +3,7 @@ import AppTechnologyIcons from "../tecnologias/AppTechnologyIcons";
 import LoadingIframe from "../../common/LoadingIframe";
 import { techCatalog } from "../../../data/data.jsx";
 
-const DEFAULT_VIDEO_SRC = "https://www.loom.com/embed/ea776b1232bc45fc9f535fce52f77298";
+const DEFAULT_VIDEO_SRC = "https://www.youtube-nocookie.com/embed/l9rQlnTijqQ";
 
 // sections: [{ title, items: [string] }] — se recorre en orden.
 // technologies: claves de techCatalog (opcional; sin ella, el stack de GHProgrammingApp).

@@ -8,6 +8,7 @@ import ProjectCardApp from "./cuadroProyectos/ProjectCardApp";
 import { featuredProjects } from "../../data/data.jsx";
 
 const inventoryApp = featuredProjects.find((project) => project.id === "inventory_app");
+const ghApp = featuredProjects.find((project) => project.id === "gh_app");
 
 const Proyectos = () => {
   const { t } = useTranslation();
@@ -36,7 +37,9 @@ const Proyectos = () => {
                 sections={[
                   { title: t("gh_app.features_title"), items: t("gh_app.features", { returnObjects: true }) },
                 ]}
-                githubLink="https://github.com/GabrielHaurane/GHProgramingApp"
+                videoSrc={ghApp.embedSrc}
+                videoLink={ghApp.videoLink}
+                githubLink={ghApp.githubLink}
               />
               <ProjectCardTec
                 img={hotelCodeImg}
